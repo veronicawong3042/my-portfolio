@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Loading from './Loading'
 
 const Home = ( {restBase} ) => {
-    const restPath = restBase + 'pages/9'
+    const restPath = restBase + 'pages/9?acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -27,8 +27,18 @@ const Home = ( {restBase} ) => {
             <article id={`post-${restData.id}`}>
                 <div className="entry-content">
                     <section>
-                        <h1>hi! my name is {restData.acf.name}</h1>
-                        <p>{restData.acf.introduction}</p>
+                        <div>
+                            <h1>hi! my name is {restData.acf.name}</h1>
+                            <p>{restData.acf.introduction}</p>
+                        </div>
+                        <div className='nav-folders'>
+                            {restData.acf.nav_links.map((item, index) => (
+                            <button key={index}>
+                                <img src={item.folder_icon} alt='folder icon'/>
+                                <p>{item.nav_link}</p>
+                            </button>
+                            ))}
+                        </div>
                     </section>
                 </div>
             </article>
