@@ -12,6 +12,12 @@ const AboutModal = ({ onClose }) => {
     const [experiencesData, setExperiencesData] = useState({});
     const [stackData, setStackData] = useState({});
     const [isLoading, setLoading] = useState(true);
+    
+    const [tab, setTab] = useState(1)
+
+    function updateTab (id) {
+        setTab(id)
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -51,11 +57,11 @@ const AboutModal = ({ onClose }) => {
                                 <button onClick={onClose}><IoClose /></button>
                                 <h1>{aboutData.acf.about_heading}</h1>
                                 <ul>
-                                    <li>{aboutData.acf.background_heading}</li>
-                                    <li>{aboutData.acf.stack_heading}</li>
-                                    <li>{aboutData.acf.faq_heading}</li>
+                                    <li onClick={() => updateTab(1)}>{aboutData.acf.background_heading}</li>
+                                    <li onClick={() => updateTab(2)}>{aboutData.acf.stack_heading}</li>
+                                    <li onClick={() => updateTab(3)}>{aboutData.acf.faq_heading}</li>
                                 </ul>
-                                <div className='about background'>
+                                <div className={tab === 1 ? "show-tab" : "hide-tab"}>
                                     <p>{aboutData.acf.about_blurb}</p>
                                     <h2>{aboutData.acf.experiences_heading}</h2>
                                     <ul>
@@ -68,7 +74,7 @@ const AboutModal = ({ onClose }) => {
                                         ))}
                                     </ul>
                                 </div>
-                                <div className='about stack'>
+                                <div className={tab === 2 ? "show-tab" : "hide-tab"}>
                                     <h2>{aboutData.acf.stack_heading}</h2>
                                     <ul>
                                     {stackData.map((stack, index) => (
@@ -79,7 +85,7 @@ const AboutModal = ({ onClose }) => {
                                         ))}
                                     </ul>
                                 </div>
-                                <div className='about faq'>
+                                <div className={tab === 3 ? "show-tab" : "hide-tab"}>
                                     <h2>{aboutData.acf.faq_heading}</h2>
                                     <ul>
                                     {aboutData.acf.faq.map((faqItem, index) => (
