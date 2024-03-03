@@ -49,6 +49,13 @@ const WorksModal = ({ onClose }) => {
                                             <h2>{work.title.rendered}</h2>
                                             <img src={work.acf.project_images} alt="" />
                                             <p>{work.acf.project_summary}</p>
+                                            <a href={work.acf.live_site_link}>Live Site</a>
+                                            <a href={work.acf.github_link}>Github</a>
+                                            <p>{work.acf.duration}</p>
+                                            <p>{work.acf.team}</p>
+                                            <p>{work.acf.roles}</p>
+                                            <p>{work.acf.toolkit}</p>
+                                            <p>{work.acf.project_process}</p>
                                         </li>
                                     ))}
                                 </ul>
