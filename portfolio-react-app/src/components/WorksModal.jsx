@@ -32,6 +32,7 @@ const WorksModal = ({ onClose }) => {
                                 <button onClick={onClose}><IoClose /></button>
                                 <h1>{restData.acf.all_works_heading}</h1>
                                 <p>{restData.acf.project_overview}</p>
+                                
                             </div>
                         </section>
                     </div>

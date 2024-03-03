@@ -3,47 +3,98 @@ import Loading from './Loading';
 import { IoClose } from 'react-icons/io5';
 
 const AboutModal = ({ onClose }) => {
-    const restBase = 'https://veronica-wong.com/portfolio/wp-json/wp/v2/'
-    const restPath = restBase + 'pages/9?acf_format=standard'
-    const [restData, setData] = useState([])
-    const [isLoaded, setLoadStatus] = useState(false)
+    const restBase = 'https://veronica-wong.com/portfolio/wp-json/wp/v2/';
+    const aboutPath = restBase + 'pages/9?acf_format=standard';
+    const experiencesPath = restBase + 'experiences'; 
+    const stackPath = restBase + 'stack'; 
+
+    const [aboutData, setAboutData] = useState({});
+    const [experiencesData, setExperiencesData] = useState({});
+    const [stackData, setStackData] = useState({});
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(restPath)
-            if (response.ok) {
-                const data = await response.json()
-                setData(data)
-                setLoadStatus(true)
+            const aboutResponse = await fetch(aboutPath);
+            const experiencesResponse = await fetch(experiencesPath);
+            const stackResponse = await fetch(stackPath);
+    
+            if (aboutResponse.ok && experiencesResponse.ok && stackResponse.ok) {
+                const aboutData = await aboutResponse.json();
+                const experiencesData = await experiencesResponse.json();
+                const stackData = await stackResponse.json();
+
+                setAboutData(aboutData);
+                setExperiencesData(experiencesData);
+                setStackData(stackData);
+
+                console.log('Experiences data:', experiencesData);
+                console.log('Stack data:', stackData);
+                setLoading(false);
             } else {
-                setLoadStatus(false)
+                setLoading(false);
             }
-        }
-        fetchData()
-    }, [restPath])
+        };
+    
+        fetchData();
+    }, [aboutPath, experiencesPath, stackPath]);    
 
     return (
         <div>
-            {isLoaded ? (
-                <article id={`post-${restData.id}`}>
+            {isLoading ? (
+                <Loading />
+            ) : (
+                <article id={`post-${aboutData.id}`}>
                     <div className="entry-content">
                         <section>
                             <div>
                                 <button onClick={onClose}><IoClose /></button>
-                                <h1>{restData.acf.about_heading}</h1>
+                                <h1>{aboutData.acf.about_heading}</h1>
                                 <ul>
-                                    <li>{restData.acf.background_heading}</li>
-                                    <li>{restData.acf.stack_heading}</li>
-                                    <li>{restData.acf.faq_heading}</li>
+                                    <li>{aboutData.acf.background_heading}</li>
+                                    <li>{aboutData.acf.stack_heading}</li>
+                                    <li>{aboutData.acf.faq_heading}</li>
                                 </ul>
-                                <p>{restData.acf.about_blurb}</p>
+                                <div className='about background'>
+                                    <p>{aboutData.acf.about_blurb}</p>
+                                    <h2>{aboutData.acf.experiences_heading}</h2>
+                                    <ul>
+                                    {experiencesData.map((experience, index) => (
+                                        <li key={index}>
+                                            <h3>{experience.title.rendered}</h3>
+                                            <p>{experience.acf.date_range}</p>
+                                            <p>{experience.acf.description}</p>
+                                        </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className='about stack'>
+                                    <h2>{aboutData.acf.stack_heading}</h2>
+                                    <ul>
+                                    {stackData.map((stack, index) => (
+                                        <li key={index}>
+                                            <h3>{stack.title.rendered}</h3>
+                                            <p>{stack.acf.stack}</p>
+                                        </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className='about faq'>
+                                    <h2>{aboutData.acf.faq_heading}</h2>
+                                    <ul>
+                                    {aboutData.acf.faq.map((faqItem, index) => (
+                                        <div key={index}>
+                                            <h3>{faqItem.question}</h3>
+                                            <p>{faqItem.answer}</p>
+                                        </div>
+                                    ))}
+                                    </ul>
+                                </div>
                             </div>
                         </section>
                     </div>
                 </article>
-            ) : (
-                <Loading />
-                )}
+            )}
         </div>
     );
 };
