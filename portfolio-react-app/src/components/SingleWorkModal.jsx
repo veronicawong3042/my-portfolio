@@ -43,11 +43,15 @@ const WorksModal = ({ onClose }) => {
                                 <p>{restData.acf.project_overview}</p>
                             </div>
                             <div className='all-works'>
+                                <ul>
                                     {worksData.map((work, index) => (
-                                        <div key={index}>
+                                        <li key={index}>
                                             <h2>{work.title.rendered}</h2>
-                                        </div>
+                                            <img src={work.acf.project_images} alt="" />
+                                            <p>{work.acf.project_summary}</p>
+                                        </li>
                                     ))}
+                                </ul>
                             </div>
                         </section>
                     </div>

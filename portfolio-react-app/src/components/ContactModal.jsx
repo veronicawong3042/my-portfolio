@@ -32,6 +32,8 @@ const ContactModal = ({ onClose }) => {
                                 <button onClick={onClose}><IoClose /></button>
                                 <h1>{restData.acf.contact_heading}</h1>
                                 <p>{restData.acf.contact_blurb}</p>
+                                <a href={restData.acf.contact_links[0].url}>LinkedIn</a>
+                                <a href={restData.acf.contact_links[1].url}>Github</a>
                             </div>
                         </section>
                     </div>
