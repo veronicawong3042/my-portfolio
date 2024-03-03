@@ -31,6 +31,11 @@ const AboutModal = ({ onClose }) => {
                             <div>
                                 <button onClick={onClose}><IoClose /></button>
                                 <h1>{restData.acf.about_heading}</h1>
+                                <ul>
+                                    <li>{restData.acf.background_heading}</li>
+                                    <li>{restData.acf.stack_heading}</li>
+                                    <li>{restData.acf.faq_heading}</li>
+                                </ul>
                                 <p>{restData.acf.about_blurb}</p>
                             </div>
                         </section>
