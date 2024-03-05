@@ -44,7 +44,7 @@ const WorksModal = ({ onClose }) => {
         <div>
             {isLoaded ? (
                 <article id={`post-${restData.id}`}>
-                    <div className="entry-content">
+                    <div className="works-entry-content">
                         <section>
                             <div>
                                 <button onClick={onClose}><IoClose /></button>

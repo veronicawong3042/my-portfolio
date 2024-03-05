@@ -51,7 +51,7 @@ const AboutModal = ({ onClose }) => {
                 <Loading />
             ) : (
                 <article id={`post-${aboutData.id}`}>
-                    <div className="entry-content">
+                    <div className="about-entry-content">
                         <section>
                             <div>
                                 <button onClick={onClose}><IoClose /></button>

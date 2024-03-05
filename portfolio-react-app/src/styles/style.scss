@@ -1,0 +1,15 @@
+// import
+@use 'variables';
+
+// header
+@use 'header';
+
+// main
+@use 'home';
+@use 'about';
+@use 'works';
+@use 'singleWork';
+@use 'contact';
+
+// footer
+@use 'footer';

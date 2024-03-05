@@ -1,0 +1,17 @@
+.home-entry-content {
+
+    .nav-folders {
+        img{
+            max-width: 40%;
+            height: auto;
+        }
+        button {
+            background: transparent;
+            border: none;
+        }
+        button:active, button:focus { 
+            border: none;
+        }
+    }
+
+}

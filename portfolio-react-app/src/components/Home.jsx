@@ -3,6 +3,7 @@ import Loading from './Loading'
 import AboutModal from './AboutModal'
 import WorksModal from './WorksModal'
 import ContactModal from './ContactModal'
+import Header from './Header'
 
 const Home = ({ restBase }) => {
     const restPath = restBase + 'pages/9?acf_format=standard'
@@ -31,14 +32,16 @@ const Home = ({ restBase }) => {
         <>
             {isLoaded ?
                 <article id={`post-${restData.id}`}>
-                    <div className="entry-content">
+                    <header>
+                        <Header/>
+                    </header>
+                    <div className="home-entry-content">
                         <section>
                             <div>
                                 <h1>hi! my name is {restData.acf.name}</h1>
                                 <p>{restData.acf.introduction}</p>
                             </div>
                             <div className='nav-folders'>
-
                                 <button onClick={() => setShowModal1(true)}>
                                     <img src={restData.acf.nav_links[0].folder_icon} alt='folder icon' />
                                     <p>{restData.acf.nav_links[0].nav_link}</p>

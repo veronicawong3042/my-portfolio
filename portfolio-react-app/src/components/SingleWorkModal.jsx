@@ -31,7 +31,7 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
         <div>
             {isLoaded ? (
                 <article id={`post-${restData.id}`}>
-                    <div className="entry-content">
+                    <div className="work-entry-content">
                         <section>
                             <div>
                                 <button onClick={onClose}><IoClose /></button>
@@ -72,7 +72,6 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                     {selectedWork.acf.link_to_prototype && (
                                         <a href={selectedWork.acf.link_to_prototype}>Link to prototype</a>
                                     )}
-                                    
                                 </div>
                             </div>
                         </section>

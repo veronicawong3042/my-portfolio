@@ -26,7 +26,7 @@ const ContactModal = ({ onClose }) => {
         <div>
             {isLoaded ? (
                 <article id={`post-${restData.id}`}>
-                    <div className="entry-content">
+                    <div className="contact-entry-content">
                         <section>
                             <div>
                                 <button onClick={onClose}><IoClose /></button>
