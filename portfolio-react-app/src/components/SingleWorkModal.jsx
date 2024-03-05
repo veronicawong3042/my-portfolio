@@ -16,6 +16,8 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                 const restData = await response.json();
                 setRestData(restData);
                 setLoadStatus(true);
+                console.log('Link to prototype:', selectedWork.acf.link_to_prototype);
+
             } else {
                 console.error('Failed to fetch data');
                 setLoadStatus(false);
@@ -38,19 +40,39 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                 <p>{selectedWork.acf.project_summary}</p>
                                 <a href={selectedWork.acf.live_site_link}>Live Site</a>
                                 <a href={selectedWork.acf.github_link}>Github</a>
+                                <h3>{selectedWork.acf.duration_heading}</h3>
                                 <p>{selectedWork.acf.duration}</p>
-                                <p>{selectedWork.acf.team}</p>
-                                <p>{selectedWork.acf.roles}</p>
-                                <p>{selectedWork.acf.toolkit}</p>
+                                <h3>{selectedWork.acf.team_heading}</h3>
+                                {selectedWork.acf.team.map((teamMember, index) => (
+                                <div key={index}>
+                                    <p>{teamMember.team_member}</p>
+                                </div>
+                                ))}
+
+                                <h3>{selectedWork.acf.roles_heading}</h3>
+                                {selectedWork.acf.roles.map((role, index) => (
+                                        <div key={index}>
+                                            <p>{role}</p>
+                                        </div>
+                                    ))}
+                                <h3>{selectedWork.acf.toolkit_heading}</h3>
+                                {selectedWork.acf.toolkit.map((tool, index) => (
+                                <div key={index}>
+                                    <p>{tool.tool}</p>
+                                </div>
+                                ))}
                                 <div className="project-process">
                                     {selectedWork.acf.project_process.map((processItem, index) => (
                                         <div key={index}>
                                             <h3>{processItem.heading}</h3>
                                             <p>{processItem.project_detailed_information}</p>
                                             <img src={selectedWork.acf.project_images} alt="" />
-                                            <a href={selectedWork.acf.link_to_prototype}>Prototype Link</a>
                                         </div>
                                     ))}
+                                    {selectedWork.acf.link_to_prototype && (
+                                        <a href={selectedWork.acf.link_to_prototype}>Link to prototype</a>
+                                    )}
+                                    
                                 </div>
                             </div>
                         </section>
