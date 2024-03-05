@@ -1,26 +1,20 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Loading from './Loading';
 import { IoClose } from 'react-icons/io5';
 
-const WorksModal = ({ onClose }) => {
+const SingleWorkModal = ({ onClose, selectedWork }) => {
     const restBase = 'https://veronica-wong.com/portfolio/wp-json/wp/v2/';
     const restPath = restBase + 'pages/9?acf_format=standard';
-    const worksPath = restBase + 'works'; // Endpoint for the works CPT
     const [restData, setRestData] = useState([]);
-    const [worksData, setWorksData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(restPath);
-            const worksResponse = await fetch(worksPath);
 
-            if (response.ok && worksResponse.ok) {
+            if (response.ok) {
                 const restData = await response.json();
-                const worksData = await worksResponse.json();
                 setRestData(restData);
-                setWorksData(worksData);
-                console.log('Works data:', worksData);
                 setLoadStatus(true);
             } else {
                 console.error('Failed to fetch data');
@@ -29,7 +23,7 @@ const WorksModal = ({ onClose }) => {
         };
 
         fetchData();
-    }, [restPath, worksPath]);
+    }, [restPath]);
 
     return (
         <div>
@@ -39,26 +33,16 @@ const WorksModal = ({ onClose }) => {
                         <section>
                             <div>
                                 <button onClick={onClose}><IoClose /></button>
-                                <h1>{restData.acf.all_works_heading}</h1>
-                                <p>{restData.acf.project_overview}</p>
-                            </div>
-                            <div className='all-works'>
-                                <ul>
-                                    {worksData.map((work, index) => (
-                                        <li key={index}>
-                                            <h2>{work.title.rendered}</h2>
-                                            <img src={work.acf.project_images} alt="" />
-                                            <p>{work.acf.project_summary}</p>
-                                            <a href={work.acf.live_site_link}>Live Site</a>
-                                            <a href={work.acf.github_link}>Github</a>
-                                            <p>{work.acf.duration}</p>
-                                            <p>{work.acf.team}</p>
-                                            <p>{work.acf.roles}</p>
-                                            <p>{work.acf.toolkit}</p>
-                                            <p>{work.acf.project_process}</p>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <h2>{selectedWork.title.rendered}</h2>
+                                <img src={selectedWork.acf.project_images} alt="" />
+                                <p>{selectedWork.acf.project_summary}</p>
+                                <a href={selectedWork.acf.live_site_link}>Live Site</a>
+                                <a href={selectedWork.acf.github_link}>Github</a>
+                                <p>{selectedWork.acf.duration}</p>
+                                <p>{selectedWork.acf.team}</p>
+                                <p>{selectedWork.acf.roles}</p>
+                                <p>{selectedWork.acf.toolkit}</p>
+                                <p>{selectedWork.acf.project_process}</p>
                             </div>
                         </section>
                     </div>
@@ -70,4 +54,4 @@ const WorksModal = ({ onClose }) => {
     );
 };
 
-export default WorksModal;
+export default SingleWorkModal;
