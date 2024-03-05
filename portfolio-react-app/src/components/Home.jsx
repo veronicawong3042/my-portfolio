@@ -32,12 +32,12 @@ const Home = ({ restBase }) => {
         <>
             {isLoaded ?
                 <article id={`post-${restData.id}`}>
-                    <header>
+                    <div>
                         <Header/>
-                    </header>
+                    </div>
                     <div className="home-entry-content">
                         <section>
-                            <div>
+                            <div className='intro'>
                                 <h1>hi! my name is {restData.acf.name}</h1>
                                 <p>{restData.acf.introduction}</p>
                             </div>
