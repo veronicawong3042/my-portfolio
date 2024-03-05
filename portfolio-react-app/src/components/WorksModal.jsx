@@ -23,6 +23,7 @@ const WorksModal = ({ onClose }) => {
                 const worksData = await worksResponse.json();
                 setRestData(restData);
                 setWorksData(worksData);
+                console.log('works data:', worksData)
                 setLoadStatus(true);
             } else {
                 console.error('Failed to fetch data');
@@ -53,6 +54,7 @@ const WorksModal = ({ onClose }) => {
                             <div className='all-works'>
                                 {worksData.map((work) => (
                                     <div key={work.id} id={`work-${work.id}`}>
+                                        {/* <img src={work._embedded['wp:featuredmedia'][0].source_url} alt="" /> */}
                                         <button onClick={() => handleWorkClick(work)}>{work.title.rendered}</button>
                                     </div>
                                 ))}

@@ -42,7 +42,16 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                 <p>{selectedWork.acf.team}</p>
                                 <p>{selectedWork.acf.roles}</p>
                                 <p>{selectedWork.acf.toolkit}</p>
-                                <p>{selectedWork.acf.project_process}</p>
+                                <div className="project-process">
+                                    {selectedWork.acf.project_process.map((processItem, index) => (
+                                        <div key={index}>
+                                            <h3>{processItem.heading}</h3>
+                                            <p>{processItem.project_detailed_information}</p>
+                                            <img src={selectedWork.acf.project_images} alt="" />
+                                            <a href={selectedWork.acf.link_to_prototype}>Prototype Link</a>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </section>
                     </div>
