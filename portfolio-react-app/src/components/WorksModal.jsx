@@ -10,8 +10,8 @@ const WorksModal = ({ onClose }) => {
     const [restData, setRestData] = useState([]);
     const [worksData, setWorksData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
-    const [showSingleWorkModal, setShowSingleWorkModal] = useState(false); // State for SingleWorkModal
-    const [selectedWork, setSelectedWork] = useState(null); // State to store the selected work
+    const [showSingleWorkModal, setShowSingleWorkModal] = useState(false); 
+    const [selectedWork, setSelectedWork] = useState(null); 
 
     useEffect(() => {
         const fetchData = async () => {
@@ -34,7 +34,6 @@ const WorksModal = ({ onClose }) => {
         fetchData();
     }, [restPath, worksPath]);
 
-    // Function to handle click on a work item
     const handleWorkClick = (work) => {
         setSelectedWork(work);
         setShowSingleWorkModal(true);
@@ -54,8 +53,10 @@ const WorksModal = ({ onClose }) => {
                             <div className='all-works'>
                                 {worksData.map((work) => (
                                     <div key={work.id} id={`work-${work.id}`}>
-                                        {/* <img src={work._embedded['wp:featuredmedia'][0].source_url} alt="" /> */}
-                                        <button onClick={() => handleWorkClick(work)}>{work.title.rendered}</button>
+                                        <button onClick={() => handleWorkClick(work)}>
+                                            <img src={work._embedded['wp:featuredmedia'][0].source_url} alt="folder icon" />
+                                            <p>{work.title.rendered}</p>
+                                        </button>
                                     </div>
                                 ))}
                             </div>
