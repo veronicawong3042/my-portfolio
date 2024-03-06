@@ -45,8 +45,8 @@ const WorksModal = ({ onClose }) => {
                 <article id={`post-${restData.id}`}>
                     <div className="works-entry-content">
                         <section>
-                            <div>
-                                <button onClick={onClose}><IoClose /></button>
+                            <div className='works-overview'>
+                                <button className='close-button' onClick={onClose}><IoClose /></button>
                                 <h1>{restData.acf.all_works_heading}</h1>
                                 <p>{restData.acf.project_overview}</p>
                             </div>

@@ -1,7 +1,15 @@
 .home-entry-content {
-
+    position: relative;
     .intro {
         text-align: center;
+
+        h1 {
+            margin-bottom: 0.25rem;
+        }
+
+        p {
+            margin: 1rem 3.5rem;
+        }
     }
 
     .nav-folders {

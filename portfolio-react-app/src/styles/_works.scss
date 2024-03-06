@@ -1,5 +1,36 @@
 .works-entry-content {
+    background-color: grey;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    margin: 0 1rem;
+
+    .close-button {
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+    }
+
     .all-works img {
         max-width: 30%;
     }
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .works-overview {
+        p {
+            margin: 0 1rem;
+        }
+    }
+
+    .all-works {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 }
