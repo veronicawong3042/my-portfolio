@@ -1,20 +1,32 @@
 .header-content {
     display: flex;
+    color: black;
     background-color: rgb(223, 223, 223);
     justify-content: space-between;
     align-items: center;
     
-    .search-icon{
-        max-width: 1.5rem;
+    .header-icons {
+        display: flex;
     }
 
-    .wifi-icon {
-        max-width: 1.5rem;
+    .header-text {
+        display: flex;
+        margin: 0 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .search-icon{
+        width: 1.5rem;
         margin-left: 0.5rem;
     }
 
-    .time {
-        margin-right: 0.5rem;
+    .wifi-icon {
+        width: 1.5rem;
+        margin-left: 0.5rem;
+    }
+
+    .date {
+        margin-right: 0.75rem;
     }
     
 }
