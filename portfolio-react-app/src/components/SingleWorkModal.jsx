@@ -39,14 +39,16 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                         <section>
                             <div>
                                 <button className='close-button' onClick={onClose}><IoClose /></button>
-                                <ul>
-                                    <li onClick={() => updateTab(1)}>{restData.acf.project_overview_heading}</li>
-                                    <li onClick={() => updateTab(2)}>{restData.acf.project_process_heading}</li>
+                                <ul className='tab-nav'>
+                                    <li className='overview-heading' onClick={() => updateTab(1)}>{restData.acf.project_overview_heading}</li>
+                                    <li className='process-heading' onClick={() => updateTab(2)}>{restData.acf.project_process_heading}</li>
                                 </ul>
                                 <h2>{selectedWork.title.rendered}</h2>
 
                                 <div className={tab === 1 ? "show-tab" : "hide-tab"}>
+                                {selectedWork.acf.project_images && (
                                     <img src={selectedWork.acf.project_images} alt="" />
+                                )}
                                     <p>{selectedWork.acf.project_summary}</p>
                                     <a href={selectedWork.acf.live_site_link}>Live Site</a>
                                     <a href={selectedWork.acf.github_link}>Github</a>
