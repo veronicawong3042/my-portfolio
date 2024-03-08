@@ -54,13 +54,13 @@ const AboutModal = ({ onClose }) => {
                     <div className="about-entry-content">
                         <section>
                             <div>
-                                <button onClick={onClose}><IoClose /></button>
-                                <h1>{aboutData.acf.about_heading}</h1>
-                                <ul>
-                                    <li onClick={() => updateTab(1)}>{aboutData.acf.background_heading}</li>
-                                    <li onClick={() => updateTab(2)}>{aboutData.acf.stack_heading}</li>
-                                    <li onClick={() => updateTab(3)}>{aboutData.acf.faq_heading}</li>
+                                <button className='close-button' onClick={onClose}><IoClose /></button>
+                                <ul className='tab-nav'>
+                                    <li className='background-heading' onClick={() => updateTab(1)}>{aboutData.acf.background_heading}</li>
+                                    <li className='stack-heading' onClick={() => updateTab(2)}>{aboutData.acf.stack_heading}</li>
+                                    <li className='faq-heading' onClick={() => updateTab(3)}>{aboutData.acf.faq_heading}</li>
                                 </ul>
+                                <h1>{aboutData.acf.about_heading}</h1>
                                 <div className={tab === 1 ? "show-tab" : "hide-tab"}>
                                     <p>{aboutData.acf.about_blurb}</p>
                                     <h2>{aboutData.acf.experiences_heading}</h2>

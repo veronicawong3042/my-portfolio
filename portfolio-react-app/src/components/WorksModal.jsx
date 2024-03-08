@@ -50,14 +50,16 @@ const WorksModal = ({ onClose }) => {
                                 <h1>{restData.acf.all_works_heading}</h1>
                                 <p>{restData.acf.project_overview}</p>
                             </div>
-                            {worksData.map((work) => (
-                                <div className='all-works' key={work.id} id={`work-${work.id}`}>
-                                    <button onClick={() => handleWorkClick(work)}>
-                                        <img src={work._embedded['wp:featuredmedia'][0].source_url} alt="folder icon" />
-                                        <p>{work.title.rendered}</p>
-                                    </button>
-                                </div>
-                            ))}
+                            <div className='all-works'>
+                                {worksData.map((work) => (
+                                <div key={work.id} id={`work-${work.id}`}>
+                                        <button onClick={() => handleWorkClick(work)}>
+                                            <img src={work._embedded['wp:featuredmedia'][0].source_url} alt="folder icon" />
+                                            <p>{work.title.rendered}</p>
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
                         </section>
                     </div>
                 </article>

@@ -29,7 +29,10 @@ const ContactModal = ({ onClose }) => {
                     <div className="contact-entry-content">
                         <section>
                             <div>
-                                <button onClick={onClose}><IoClose /></button>
+                                <button className='close-button' onClick={onClose}><IoClose /></button>
+                                <ul className='tab-nav'>
+                                    <li className='contact-heading'>contact</li>
+                                </ul>
                                 <h1>{restData.acf.contact_heading}</h1>
                                 <p>{restData.acf.contact_blurb}</p>
                                 <a href={restData.acf.contact_links[0].url}>LinkedIn</a>

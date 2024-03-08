@@ -1,0 +1,40 @@
+.contact-entry-content {
+    background-color: rgb(220, 220, 220);
+    color: black;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    position: absolute;
+    top: 0; 
+    z-index: 10;
+    margin: 0 1rem;
+    height: 60vh;
+    width: 90vw;
+    overflow: auto;
+
+    .close-button {
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+    }
+
+    .tab-nav {
+        list-style: none;
+        display: flex;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 0;
+    }
+
+    p, a, h3 {
+        margin: 1rem 1.5rem;
+    }
+
+}
