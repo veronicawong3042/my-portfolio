@@ -38,10 +38,28 @@
         top: 0.5rem;
     }
 
-    h1 {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 1rem;
+    
+    .about-heading-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1.5px solid black;
+        margin: 0 0.5rem;
+        border-radius: 0.5rem;
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 200;
+            margin: 0 auto;
+            padding-right: 0.75rem;
+        }
+
+        .search-icon {
+            max-width: 1.5rem;
+            margin-left: 0.5rem;
+        }
+
     }
 
     h2 {
@@ -53,4 +71,13 @@
         margin: 1rem 1.5rem;
     }
 
+    .question-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .down-arrow {
+        margin: 1rem;
+    }
 }
