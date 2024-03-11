@@ -22,24 +22,57 @@
     .tab-nav {
         list-style: none;
         display: flex;
-    }
-    
-    .background-heading {
-        margin-right: 1rem;
+        padding-inline-start: 0rem;
+        margin: 0.5rem 0;
+        margin-bottom: 0;
+        font-size: 14px;
     }
 
     .stack-heading {
-        margin-right: 1rem;
+        border-right: 1.5px black solid;
+        border-left: 1.5px black solid;
+        border-top: 1.5px black solid;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        margin-bottom: 0;
+        padding: 0.1rem 1.5rem;
+    }
+
+    .faq-heading {
+        border-right: 1.5px black solid;
+        border-left: 1.5px black solid;
+        border-top: 1.5px black solid;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        margin-bottom: 0;
+        padding: 0.1rem 1.8rem;
+    }
+
+    .background-heading {
+        border-right: 1.5px black solid;
+        border-left: 1.5px black solid;
+        border-top: 1.5px black solid;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        margin-bottom: 0;
+        padding: 0.1rem 0.5rem;
     }
 
     .close-button {
         position: absolute;
-        right: 0;
+        right: 0.3rem;
         top: 0.5rem;
+        padding: 0;
     }
 
-    
     .about-heading-container {
+        background-color: white;
+        padding: 0.3rem;
+        border-top: 1.5px solid black;
+        border-bottom: 1.5px solid black;
+    }
+
+    .about-heading {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -49,7 +82,7 @@
 
         h1 {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 200;
             margin: 0 auto;
             padding-right: 0.75rem;
@@ -59,7 +92,6 @@
             max-width: 1.5rem;
             margin-left: 0.5rem;
         }
-
     }
 
     h2 {
@@ -80,4 +112,23 @@
     .down-arrow {
         margin: 1rem;
     }
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1rem;
+
+        p{
+            background-color: rgb(218, 218, 255);
+            padding: 0.5rem;
+            border: 1.5px black solid;
+            border-radius: 1rem;
+            margin: 0.2rem;
+        }
+    }
+
+    li {
+        list-style: none;
+    }
 }
+

@@ -43,37 +43,57 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                     <li className='overview-heading' onClick={() => updateTab(1)}>{restData.acf.project_overview_heading}</li>
                                     <li className='process-heading' onClick={() => updateTab(2)}>{restData.acf.project_process_heading}</li>
                                 </ul>
-                                <h2>{selectedWork.title.rendered}</h2>
+
+                                <div className='work-container'>
+                                    <div className='work-heading'>
+                                        <svg className='search-icon' clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15.97 17.031c-1.479 1.238-3.384 1.985-5.461 1.985-4.697 0-8.509-3.812-8.509-8.508s3.812-8.508 8.509-8.508c4.695 0 8.508 3.812 8.508 8.508 0 2.078-.747 3.984-1.985 5.461l4.749 4.75c.146.146.219.338.219.531 0 .587-.537.75-.75.75-.192 0-.384-.073-.531-.22zm-5.461-13.53c-3.868 0-7.007 3.14-7.007 7.007s3.139 7.007 7.007 7.007c3.866 0 7.007-3.14 7.007-7.007s-3.141-7.007-7.007-7.007z" fill-rule="nonzero"/></svg>
+                                        <h1>{selectedWork.title.rendered}</h1>
+                                    </div>
+                                </div>
 
                                 <div className={tab === 1 ? "show-tab" : "hide-tab"}>
                                 {selectedWork.acf.project_images && (
                                     <img src={selectedWork.acf.project_images} alt="" />
                                 )}
                                     <p>{selectedWork.acf.project_summary}</p>
-                                    <a href={selectedWork.acf.live_site_link}>Live Site</a>
-                                    <a href={selectedWork.acf.github_link}>Github</a>
-                                    <h3>{selectedWork.acf.duration_heading}</h3>
-                                    <p>{selectedWork.acf.duration}</p>
-                                    <h3>{selectedWork.acf.team_heading}</h3>
-                                    {selectedWork.acf.team.map((teamMember, index) => (
-                                    <div key={index}>
-                                        <p>{teamMember.team_member}</p>
+                                    <div className="links">
+                                        <a href={selectedWork.acf.live_site_link}>Live Site</a>
+                                        <a href={selectedWork.acf.github_link}>Github</a>
                                     </div>
-                                    ))}
-
-                                    <h3>{selectedWork.acf.roles_heading}</h3>
-                                    {selectedWork.acf.roles.map((role, index) => (
+                                    <div className="work-details">
+                                        <div className="duration">
+                                            <h3>{selectedWork.acf.duration_heading}</h3>
+                                            <p>{selectedWork.acf.duration}</p>
+                                        </div>
+                                        
+                                        <div className="team">
+                                            <h3>{selectedWork.acf.team_heading}</h3>
+                                            {selectedWork.acf.team.map((teamMember, index) => (
                                             <div key={index}>
-                                                <p>{role}</p>
+                                                <p>{teamMember.team_member}</p>
                                             </div>
+                                            ))}
+                                        </div>
+                                        
+                                        <div className="roles">
+                                            <h3>{selectedWork.acf.roles_heading}</h3>
+                                            {selectedWork.acf.roles.map((role, index) => (
+                                                    <div key={index}>
+                                                        <p>{role}</p>
+                                                    </div>
+                                                ))}
+                                        </div>
+
+                                        <div className="toolkit">
+                                        <h3>{selectedWork.acf.toolkit_heading}</h3>
+                                        {selectedWork.acf.toolkit.map((tool, index) => (
+                                        <div key={index}>
+                                            <p>{tool.tool}</p>
+                                        </div>
                                         ))}
-                                    <h3>{selectedWork.acf.toolkit_heading}</h3>
-                                    {selectedWork.acf.toolkit.map((tool, index) => (
-                                    <div key={index}>
-                                        <p>{tool.tool}</p>
+                                        </div>
+                                        </div>
                                     </div>
-                                    ))}
-                                </div>
                                 <div className={tab === 2 ? "show-tab" : "hide-tab"}>
                                     {selectedWork.acf.project_process.map((processItem, index) => (
                                         <div key={index}>
