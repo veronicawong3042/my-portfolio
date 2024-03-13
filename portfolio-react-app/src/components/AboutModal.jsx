@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Loading from './Loading';
 import { IoClose } from 'react-icons/io5';
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const AboutModal = ({ onClose }) => {
     const restBase = 'https://veronica-wong.com/portfolio/wp-json/wp/v2/';
@@ -13,11 +13,16 @@ const AboutModal = ({ onClose }) => {
     const [experiencesData, setExperiencesData] = useState({});
     const [stackData, setStackData] = useState({});
     const [isLoading, setLoading] = useState(true);
+    const [activeFAQ, setActiveFAQ] = useState(null);
     
     const [tab, setTab] = useState(1)
 
     function updateTab (id) {
         setTab(id)
+    }
+
+    const toggleFAQ = (index) => {
+        setActiveFAQ(activeFAQ === index ? null : index);
     }
 
     useEffect(() => {
@@ -58,9 +63,9 @@ const AboutModal = ({ onClose }) => {
                             <div>
                                 <button className='close-button' onClick={onClose}><IoClose /></button>
                                 <ul className='tab-nav'>
-                                    <li className='background-heading' onClick={() => updateTab(1)}>{aboutData.acf.background_heading}</li>
-                                    <li className='stack-heading' onClick={() => updateTab(2)}>{aboutData.acf.stack_heading}</li>
-                                    <li className='faq-heading' onClick={() => updateTab(3)}>{aboutData.acf.faq_heading}</li>
+                                    <li className={tab === 1 ? 'background-heading active' : 'background-heading'} onClick={() => updateTab(1)}>{aboutData.acf.background_heading}</li>
+                                    <li className={tab === 2 ? 'stack-heading active' : 'stack-heading'} onClick={() => updateTab(2)}>{aboutData.acf.stack_heading}</li>
+                                    <li className={tab === 3 ? 'faq-heading active' : 'faq-heading'} onClick={() => updateTab(3)}>{aboutData.acf.faq_heading}</li>
                                 </ul>
                                 <div className='about-heading-container'>
                                 <div className='about-heading'>
@@ -100,11 +105,11 @@ const AboutModal = ({ onClose }) => {
                                 <div className={tab === 3 ? "show-tab" : "hide-tab"}>
                                     {aboutData.acf.faq.map((faqItem, index) => (
                                         <div className='faq-section' key={index}>
-                                            <div className='question-heading'>
+                                            <div className='question-heading' onClick={() => toggleFAQ(index)}>
                                                 <h3>{faqItem.question}</h3>
-                                                <IoIosArrowDown className='down-arrow'/>
+                                                {activeFAQ === index ? <IoIosArrowUp className="up-arrow" /> : <IoIosArrowDown className="down-arrow" />}
                                             </div>
-                                            <p>{faqItem.answer}</p>
+                                            <p className={activeFAQ === index ? 'show-tab' : 'hide-tab'}>{faqItem.answer}</p>
                                         </div>
                                     ))}
                                 </div>

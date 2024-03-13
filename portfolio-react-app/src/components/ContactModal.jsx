@@ -40,8 +40,10 @@ const ContactModal = ({ onClose }) => {
                                 </div>
                                 </div>
                                 <p>{restData.acf.contact_blurb}</p>
-                                <a href={restData.acf.contact_links[0].url}>LinkedIn</a>
-                                <a href={restData.acf.contact_links[1].url}>Github</a>
+                                <div className='links'>
+                                    <a href={restData.acf.contact_links[0].url}>LinkedIn</a>
+                                    <a href={restData.acf.contact_links[1].url}>Github</a>
+                                </div>
                             </div>
                         </section>
                     </div>

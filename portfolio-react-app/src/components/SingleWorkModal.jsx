@@ -40,8 +40,8 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                             <div>
                                 <button className='close-button' onClick={onClose}><IoClose /></button>
                                 <ul className='tab-nav'>
-                                    <li className='overview-heading' onClick={() => updateTab(1)}>{restData.acf.project_overview_heading}</li>
-                                    <li className='process-heading' onClick={() => updateTab(2)}>{restData.acf.project_process_heading}</li>
+                                    <li className={tab === 1 ? 'overview-heading active' : 'overview-heading'} onClick={() => updateTab(1)}>{restData.acf.project_overview_heading}</li>
+                                    <li className={tab === 2 ? 'process-heading active' : 'process-heading'} onClick={() => updateTab(2)}>{restData.acf.project_process_heading}</li>
                                 </ul>
 
                                 <div className='work-container'>
@@ -65,7 +65,7 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                             <h3>{selectedWork.acf.duration_heading}</h3>
                                             <p>{selectedWork.acf.duration}</p>
                                         </div>
-                                        
+
                                         <div className="team">
                                             <h3>{selectedWork.acf.team_heading}</h3>
                                             {selectedWork.acf.team.map((teamMember, index) => (
