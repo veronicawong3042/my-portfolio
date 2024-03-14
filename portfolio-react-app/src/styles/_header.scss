@@ -1,7 +1,9 @@
+@use 'variables' as *;
+
 .header-content {
     display: flex;
     color: black;
-    background-color: rgb(223, 223, 223);
+    background-color: $light-blue;
     justify-content: space-between;
     align-items: center;
     

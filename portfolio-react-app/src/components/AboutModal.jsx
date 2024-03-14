@@ -3,6 +3,7 @@ import Loading from './Loading';
 import { IoClose } from 'react-icons/io5';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
+
 const AboutModal = ({ onClose }) => {
     const restBase = 'https://veronica-wong.com/portfolio/wp-json/wp/v2/';
     const aboutPath = restBase + 'pages/9?acf_format=standard';
@@ -76,9 +77,11 @@ const AboutModal = ({ onClose }) => {
                                 <div className={tab === 1 ? "show-tab" : "hide-tab"}>
                                     <p>{aboutData.acf.about_blurb}</p>
                                     <h2>{aboutData.acf.experiences_heading}</h2>
-                                    <ul>
+                                    <ul className='experiences'>
                                     {experiencesData.map((experience, index) => (
                                         <li key={index}>
+                                            <div className="timeline-line"></div>
+                                            <svg className='star-icon' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z"/></svg>
                                             <h3>{experience.title.rendered}</h3>
                                             <p>{experience.acf.date_range}</p>
                                             <p>{experience.acf.description}</p>
@@ -88,9 +91,14 @@ const AboutModal = ({ onClose }) => {
                                 </div>
                                 <div className={tab === 2 ? "show-tab" : "hide-tab"}>
                                 <div>
+                                    {stackData.map((stackTitle, index) => (
+                                        <div key={index}>
+                                            <h3>{stackTitle.title.rendered}</h3>
+                                        </div>
+                                        ))}
+                                    
                                     {stackData.map((stack, index) => (
                                         <div key={index}>
-                                            <h3>{stack.title.rendered}</h3>
                                             <div className="skills">
                                             {stack.acf.stack.map((single, skillIndex) => (
                                                 <div key={skillIndex}>

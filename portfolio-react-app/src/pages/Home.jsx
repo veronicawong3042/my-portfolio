@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import Loading from './Loading'
-import AboutModal from './AboutModal'
-import WorksModal from './WorksModal'
-import ContactModal from './ContactModal'
-import Header from './Header'
+import Loading from '../components/Loading'
+import AboutModal from '../components/AboutModal'
+import WorksModal from '../components/WorksModal'
+import ContactModal from '../components/ContactModal'
+import Header from '../components/Header'
 
 const Home = ({ restBase }) => {
     const restPath = restBase + 'pages/9?acf_format=standard'

@@ -1,6 +1,11 @@
+@use 'variables' as *;
+
 .home-entry-content {
     position: relative;
     color: black;
+    background-color: $background-color;
+    padding: 1rem;
+    
     .intro {
         text-align: center;
 

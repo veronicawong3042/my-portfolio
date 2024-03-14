@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import Home from './components/Home'
+import Home from './pages/Home'
 
 function App() {
   
@@ -17,7 +17,8 @@ function App() {
         </Routes>
       </main>
       <footer>
-        <p className="copyright">2024 Veronica Wong</p>
+        <p className="copyright">&copy; 2024 Veronica Wong</p>
+        <p>powered by &#127836;, &#127834;, and &#9749;</p>
       </footer>
     </Router>
   )
