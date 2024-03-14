@@ -135,7 +135,7 @@
         fill: $light-blue;
     }
 
-    // stack section
+    // stack/skills section
     .skills {
         display: flex;
         flex-wrap: wrap;
@@ -144,7 +144,7 @@
         p{
             background-color: rgb(218, 218, 255);
             padding: 0.3rem;
-            border: 1.5px black solid;
+            // border: 1.5px black solid;
             border-radius: 0.5rem;
             margin: 0.2rem;
             font-size: 14px;

@@ -15,8 +15,9 @@
 
     .close-button {
         position: absolute;
-        right: -0.8rem;
-        top: 0rem;
+        right: 0.5rem;
+        padding: 0;
+        top: 0.5rem;
     }
 
     .tab-nav {
@@ -75,21 +76,46 @@
         margin: 0;
     }
 
-    p, a, h3 {
-        margin: 1rem 1.5rem;
+    p, h3 {
+        margin: 0rem 1.5rem;
     }
 
-    a {
-        background-color: $light-purple;
-        padding: 0.5rem;
-        border: 1.5px black solid;
-        border-radius: 0.5rem;
-        color: black;
+    .contact-blurb, .other-info {
+        margin-top: 1rem;
     }
 
+    .copy-button {
+        text-align: center;
+        margin-top: 1rem;
+
+        .email {
+            border: 1.5px black solid;
+            background-color: white;
+            padding: 0.2rem;
+            border-radius: 0.25rem;
+        }
+
+        button {
+            padding: 0.25rem;
+            background-color: $light-blue;
+            margin-left: 0.25rem;
+        }
+    }
+    
     .links {
         text-align: center;  
         margin-top: 2rem;  
-    }
+        display: flex;
+        justify-content: center;
 
+        svg {
+            width: 35px;
+            height: 35px;
+            fill: $text-color;
+        }
+    }
+    
+    a {
+        color: black;
+    }
 }

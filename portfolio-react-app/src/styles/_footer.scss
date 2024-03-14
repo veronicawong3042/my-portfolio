@@ -5,4 +5,9 @@ footer {
     padding: 0.3rem;
     text-align: center;
     margin: 0;
+    
+    p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
 }
