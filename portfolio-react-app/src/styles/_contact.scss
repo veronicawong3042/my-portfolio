@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 .contact-entry-content {
-    background-color: rgb(220, 220, 220);
+    background-color: $background-color;
     color: black;
     border-radius: 0.5rem;
     border: 2px solid black;
@@ -29,7 +29,7 @@
     }
 
     .contact-heading-container {
-        background-color: white;
+        background-color: $background-color;
         padding: 0.3rem;
         border-top: 1.5px solid black;
         border-bottom: 1.5px solid black;

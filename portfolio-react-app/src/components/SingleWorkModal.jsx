@@ -66,6 +66,14 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                             <p>{selectedWork.acf.duration}</p>
                                         </div>
 
+                                        <div className="toolkit">
+                                        <h3>{selectedWork.acf.toolkit_heading}</h3>
+                                        {selectedWork.acf.toolkit.map((tool, index) => (
+                                        <div key={index}>
+                                            <p>{tool.tool}</p>
+                                        </div>
+                                        ))}
+                                        </div>
                                         <div className="team">
                                             <h3>{selectedWork.acf.team_heading}</h3>
                                             {selectedWork.acf.team.map((teamMember, index) => (
@@ -77,21 +85,9 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                         
                                         <div className="roles">
                                             <h3>{selectedWork.acf.roles_heading}</h3>
-                                            {selectedWork.acf.roles.map((role, index) => (
-                                                    <div key={index}>
-                                                        <p>{role}</p>
-                                                    </div>
-                                                ))}
+                                            <p>{selectedWork.acf.roles}</p>
                                         </div>
 
-                                        <div className="toolkit">
-                                        <h3>{selectedWork.acf.toolkit_heading}</h3>
-                                        {selectedWork.acf.toolkit.map((tool, index) => (
-                                        <div key={index}>
-                                            <p>{tool.tool}</p>
-                                        </div>
-                                        ))}
-                                        </div>
                                         </div>
                                     </div>
                                 <div className={tab === 2 ? "show-tab" : "hide-tab"}>

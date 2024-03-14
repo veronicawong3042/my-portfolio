@@ -38,7 +38,7 @@ const Home = ({ restBase }) => {
                     <div className="home-entry-content">
                         <section>
                             <div className='intro'>
-                                <h1>hi! my name is {restData.acf.name}</h1>
+                                <h1>{restData.acf.name}'s desktop</h1>
                                 <p>{restData.acf.introduction}</p>
                             </div>
                             <div className='nav-folders'>
