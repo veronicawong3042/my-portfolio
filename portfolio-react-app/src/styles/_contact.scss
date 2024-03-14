@@ -2,7 +2,7 @@
 
 .contact-entry-content {
     background-color: $background-color;
-    color: black;
+    color: $text-color;
     border-radius: 0.5rem;
     border: 2px solid black;
     position: absolute;
@@ -93,6 +93,8 @@
             background-color: white;
             padding: 0.2rem;
             border-radius: 0.25rem;
+            color: $text-color;
+
         }
 
         button {
@@ -104,7 +106,7 @@
     
     .links {
         text-align: center;  
-        margin-top: 2rem;  
+        margin-top: 1rem;  
         display: flex;
         justify-content: center;
 

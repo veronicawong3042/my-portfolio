@@ -2,13 +2,14 @@
 
 .header-content {
     display: flex;
-    color: black;
+    color: $text-color;
     background-color: $light-blue;
     justify-content: space-between;
     align-items: center;
     
     .header-icons {
         display: flex;
+        fill: $text-color;
     }
 
     .header-text {

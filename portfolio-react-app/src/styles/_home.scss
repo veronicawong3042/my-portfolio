@@ -2,7 +2,7 @@
 
 .home-entry-content {
     position: relative;
-    color: black;
+    color: $text-color;
     background-color: $background-color;
     padding: 1rem;
     
@@ -28,6 +28,8 @@
         button {
             background: transparent;
             border: none;
+            color: $text-color;
+
         }
         button:active, button:focus { 
             border: none;
