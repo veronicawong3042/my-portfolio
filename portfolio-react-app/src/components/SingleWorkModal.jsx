@@ -7,11 +7,11 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
     const restPath = restBase + 'pages/9?acf_format=standard';
     const [restData, setRestData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
+    const [tab, setTab] = useState(1);
+    const [imageData, setImageData] = useState([]);
 
-    const [tab, setTab] = useState(1)
-
-    function updateTab (id) {
-        setTab(id)
+    function updateTab(id) {
+        setTab(id);
     }
 
     useEffect(() => {
@@ -31,6 +31,29 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
         fetchData();
     }, [restPath]);
 
+    useEffect(() => {
+        const fetchImageData = async () => {
+            const imageDataPromises = selectedWork.acf.project_images.map(async imageId => {
+                const response = await fetch(`https://veronica-wong.com/portfolio/wp-json/wp/v2/media/${imageId}`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch image data');
+                }
+                return await response.json();
+            });
+
+            try {
+                const imageData = await Promise.all(imageDataPromises);
+                setImageData(imageData); // Update state with complete image data
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        if (selectedWork && selectedWork.acf && selectedWork.acf.project_images) {
+            fetchImageData();
+        }
+    }, [selectedWork]);
+
     return (
         <div>
             {isLoaded ? (
@@ -46,15 +69,20 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
 
                                 <div className='work-container'>
                                     <div className='work-heading'>
-                                        <svg className='search-icon' clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15.97 17.031c-1.479 1.238-3.384 1.985-5.461 1.985-4.697 0-8.509-3.812-8.509-8.508s3.812-8.508 8.509-8.508c4.695 0 8.508 3.812 8.508 8.508 0 2.078-.747 3.984-1.985 5.461l4.749 4.75c.146.146.219.338.219.531 0 .587-.537.75-.75.75-.192 0-.384-.073-.531-.22zm-5.461-13.53c-3.868 0-7.007 3.14-7.007 7.007s3.139 7.007 7.007 7.007c3.866 0 7.007-3.14 7.007-7.007s-3.141-7.007-7.007-7.007z" fill-rule="nonzero"/></svg>
+                                        <svg className='search-icon' clipRule="evenodd" fillRule="evenodd" strokeLinejoin="round" strokeMiterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15.97 17.031c-1.479 1.238-3.384 1.985-5.461 1.985-4.697 0-8.509-3.812-8.509-8.508s3.812-8.508 8.509-8.508c4.695 0 8.508 3.812 8.508 8.508 0 2.078-.747 3.984-1.985 5.461l4.749 4.75c.146.146.219.338.219.531 0 .587-.537.75-.75.75-.192 0-.384-.073-.531-.22zm-5.461-13.53c-3.868 0-7.007 3.14-7.007 7.007s3.139 7.007 7.007 7.007c3.866 0 7.007-3.14 7.007-7.007s-3.141-7.007-7.007-7.007z" fillRule="nonzero"/></svg>
                                         <h1>{selectedWork.title.rendered}</h1>
                                     </div>
                                 </div>
 
                                 <div className={tab === 1 ? "show-tab" : "hide-tab"}>
-                                {selectedWork.acf.project_images && (
-                                    <img src={selectedWork.acf.project_images} alt="" />
-                                )}
+                                    {imageData.map((image, index) => {
+                                        const imageUrl = image.source_url || '';
+                                        const imageAlt = image.alt_text || '';
+                                        return (
+                                            <img key={index} src={imageUrl} alt={imageAlt} />
+                                        );
+                                    })}
+                                    
                                     <p>{selectedWork.acf.project_summary}</p>
                                     <div className="links">
                                         <a href={selectedWork.acf.live_site_link}>Live Site</a>
@@ -67,19 +95,19 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                         </div>
 
                                         <div className="toolkit">
-                                        <h3>{selectedWork.acf.toolkit_heading}</h3>
-                                        {selectedWork.acf.toolkit.map((tool, index) => (
-                                        <div key={index}>
-                                            <p>{tool.tool}</p>
-                                        </div>
-                                        ))}
+                                            <h3>{selectedWork.acf.toolkit_heading}</h3>
+                                            {selectedWork.acf.toolkit.map((tool, index) => (
+                                                <div key={index}>
+                                                    <p>{tool.tool}</p>
+                                                </div>
+                                            ))}
                                         </div>
                                         <div className="team">
                                             <h3>{selectedWork.acf.team_heading}</h3>
                                             {selectedWork.acf.team.map((teamMember, index) => (
-                                            <div key={index}>
-                                                <p>{teamMember.team_member}</p>
-                                            </div>
+                                                <div key={index}>
+                                                    <p>{teamMember.team_member}</p>
+                                                </div>
                                             ))}
                                         </div>
                                         
@@ -88,27 +116,25 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                             <p>{selectedWork.acf.roles}</p>
                                         </div>
 
-                                        </div>
                                     </div>
+                                </div>
                                 <div className={tab === 2 ? "show-tab" : "hide-tab"}>
                                     {selectedWork.acf.project_process.map((processItem, index) => (
                                         <div key={index}>
                                             {processItem.heading && (
-                                            <h3>{processItem.heading}</h3>
+                                                <h3>{processItem.heading}</h3>
                                             )}
                                             {processItem.project_detailed_information && (
-                                            <p>{processItem.project_detailed_information}</p>
+                                                <p>{processItem.project_detailed_information}</p>
                                             )}
                                             {processItem.project_images && (
-                                            <img src={processItem.project_images} alt="" />
+                                                <img src={processItem.project_images} alt="" />
                                             )}
                                             {processItem.link_to_prototype && (
                                                 <a href={processItem.link_to_prototype}>Link to prototype</a>
                                             )}
                                         </div>
                                     ))}
-                                    
-                                    
                                 </div>
                             </div>
                         </section>
