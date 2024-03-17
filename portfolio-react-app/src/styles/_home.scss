@@ -4,36 +4,120 @@
     position: relative;
     color: $text-color;
     background-color: $background-color;
-    padding: 1rem;
+    height: 100vh;
     
     .intro {
         text-align: center;
 
         h1 {
-            margin: 1rem;
-            margin-top: 2rem;
             font-weight: 500;
+            margin: 0;
+            padding: 1rem;
+            padding-top: 2rem;
+            padding-bottom: 0;
         }
 
         p {
             margin: 1rem 3.5rem;
+            color: $text-color;
         }
     }
 
+    
     .nav-folders {
+        text-align: center;
+
+        .folder-button {
+            max-width: 100%;
+            width: 12rem;
+        }
+
+
         img{
-            max-width: 40%;
+            max-width: 50%;
             height: auto;
         }
-        button {
-            background: transparent;
-            border: none;
+        
+        p{
             color: $text-color;
-
         }
+
+        
         button:active, button:focus { 
             border: none;
         }
     }
+    
+    // 384px
+    @media (min-width: 24em) {
+        .nav-folders {
+            margin-top: 2rem;
+        }
+    }
+    
+    // 452px
+    @media (min-width: 28.25em) {
+        .intro {
+            h1 {
+                padding-top: 5rem;
+                margin: 0 2rem;
+            }
 
+            p{
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        .nav-folders {
+            .folder-button {
+                width: 8rem;
+            }
+
+            img{
+                max-width: 80%;
+            }
+    }}
+
+    // 768px tablet
+    @media (min-width: 48em) {
+        .intro {
+            h1 {
+                font-size: 4rem;
+                padding-top: 7rem;
+            }
+            p{
+                font-size: 1.5rem;
+            }
+        }
+
+        .nav-folders {
+            .folder-button {
+                width: 11rem;
+            }
+
+            img{
+                max-width: 80%;
+            }
+            
+            p {
+                font-size: 1.5rem;
+                margin: 0.75rem;
+            }
+        }
+    }
+
+    // 1024px laptop
+    @media (min-width: 64em) {
+
+        .intro {
+            padding-top: 12rem;
+        }
+        .nav-folders {
+            display: grid;
+            grid-template-rows: repeat(3, 33.33%);
+            position: absolute;
+            right: 0.5rem;
+            top: 0.5rem;
+        }
+    }
 }

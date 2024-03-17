@@ -7,18 +7,13 @@
     border: 2px solid black;
     position: absolute;
     top: 0; 
+    left: 0;
+    right: 0;
     z-index: 10;
-    // margin: 0 1rem;
     height: 90vh;
     width: 90vw;
     overflow: auto;
-
-    .close-button {
-        position: absolute;
-        right: 0.3rem;
-        top: 0.5rem;
-        padding: 0;
-    }
+    margin: 0 auto;
 
     .all-works img {
         max-width: 70%;
@@ -37,6 +32,15 @@
     .works-overview {
         p {
             margin: 0 1rem;
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 1.5rem;
+        }
+        .close-button {
+            position: absolute;
+            right: 0.3rem;
+            top: 0.5rem;
+            padding: 0;
         }
     }
 
@@ -45,6 +49,28 @@
         grid-template-columns: 50% 50%;    
     }
 
-    
+    .works-folders img{
+        max-width: 55%;
+    }
 
+    // 425px mobile large
+    @media (min-width: 26.56em) {
+        .works-overview {
+            p { 
+                font-size: 1rem;
+                margin: 0 2rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .all-works {
+            div {
+                max-width: 9rem;
+                margin: 0 auto;
+            }
+        }
+        .works-folders img{
+            max-width: 65%;
+        }
+    }
 }

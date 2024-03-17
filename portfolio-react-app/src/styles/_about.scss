@@ -7,11 +7,14 @@
     border: 2px solid black;
     position: absolute;
     top: 0; 
+    left: 0;
+    right: 0;
     z-index: 10;
-    // margin: 0 1rem;
     height: 90vh;
     width: 90vw;
     overflow: auto;
+    text-align: left;
+    margin: 0 auto;
 
     .hide-tab {
         display: none;

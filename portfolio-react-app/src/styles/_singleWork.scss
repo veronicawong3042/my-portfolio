@@ -14,6 +14,7 @@
     overflow: auto;
     margin: 0 1rem;
     font-size: 14px;
+    text-align: left;
 
     .tab-nav {
         list-style: none;
@@ -95,6 +96,13 @@
     
     .show-tab {
         display: block;
+        
+        img {
+            max-width: 95%;
+            margin: 0 auto;
+            display: flex;
+            margin-top: 1rem 
+        }
     }
 
     .close-button {
@@ -119,6 +127,6 @@
 
     .work-details {
         margin-top: 1rem;
-
     }
+
 }

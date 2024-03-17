@@ -6,9 +6,17 @@ footer {
     padding: 0.3rem;
     text-align: center;
     margin: 0;
+    font-size: 0.85rem;
     
     p {
         margin-block-start: 0;
         margin-block-end: 0;
+    }
+}
+
+// 768px tablet
+@media (min-width: 48em) {
+    footer {
+        font-size: 1rem;
     }
 }

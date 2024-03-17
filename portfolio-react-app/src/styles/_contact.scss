@@ -7,11 +7,14 @@
     border: 2px solid black;
     position: absolute;
     top: 0; 
+    left: 0;
+    right: 0;
     z-index: 10;
-    // margin: 0 1rem;
     height: 60vh;
     width: 90vw;
     overflow: auto;
+    margin: 0 auto;
+    text-align: left;
 
     .close-button {
         position: absolute;

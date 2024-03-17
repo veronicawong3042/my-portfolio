@@ -31,5 +31,22 @@
     .date {
         margin-right: 0.75rem;
     }
-    
+
+}
+
+// 768px tablet
+@media (min-width: 48em) {
+    .header-content {
+
+        .header-text {
+            font-size: 1rem;
+        }
+    }
+}
+
+// 1024px laptop
+@media (min-width: 64em) {
+    .header-content {
+        justify-content: flex-end;
+    }
 }

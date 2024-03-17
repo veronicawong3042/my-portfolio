@@ -91,14 +91,10 @@ const AboutModal = ({ onClose }) => {
                                 </div>
                                 <div className={tab === 2 ? "show-tab" : "hide-tab"}>
                                 <div>
-                                    {stackData.map((stackTitle, index) => (
-                                        <div key={index}>
-                                            <h3>{stackTitle.title.rendered}</h3>
-                                        </div>
-                                        ))}
-                                    
+                                   
                                     {stackData.map((stack, index) => (
                                         <div key={index}>
+                                            <h3>{stack.title.rendered}</h3>
                                             <div className="skills">
                                             {stack.acf.stack.map((single, skillIndex) => (
                                                 <div key={skillIndex}>
