@@ -20,3 +20,10 @@ footer {
         font-size: 1rem;
     }
 }
+
+// 1400px laptop
+@media (min-width: 87.5em) {
+    footer {
+        font-size: 1.25rem;
+    }
+}

@@ -10,7 +10,7 @@
     left: 0;
     right: 0;
     z-index: 10;
-    height: 90vh;
+    height: 85vh;
     width: 90vw;
     overflow: auto;
     margin: 0 auto;
@@ -53,22 +53,33 @@
         max-width: 55%;
     }
 
+    // 330px
+    @media (min-width: 20.63em) {
+        height: 87vh;
+        width: 87vw;
+    }
+
+    // 382px
+    @media (min-width: 23.88em) {
+        height: 89vh;
+    }
+
     // 425px mobile large
     @media (min-width: 26.56em) {
-        height: 75vh;
-        width: 85vw;
+        height: 72vh;
+        width: 75vw;
 
         .works-overview {
             p { 
                 font-size: 1rem;
-                margin: 0 2rem;
+                margin: 0 1.75rem;
                 margin-bottom: 1.5rem;
             }
         }
 
         .all-works {
             grid-template-columns: repeat(3, 33.33%);
-            margin: 0 2rem;
+            margin: 0 1rem;
 
             div {
                 max-width: 9rem;
@@ -77,7 +88,7 @@
         }
         .works-folders {
             img{
-                max-width: 65%;
+                max-width: 75%;
             }
             
             p{
@@ -86,14 +97,25 @@
         }
     }
 
+    // 560px
+    @media (min-width: 35em) {
+        height: 68vh;
+
+        .works-folders {
+            img{
+                max-width: 65%;
+            }
+        }
+    }
+
     // 768px tablet
     @media (min-width: 48em) {
-        height: 73vh;
-        width: 70vw;
+        height: 69vh;
+        width: 67vw;
 
         .works-overview {
             p { 
-                margin: 0 7rem;
+                margin: 0 4rem;
                 margin-bottom: 1.5rem;
             }
         }
@@ -105,28 +127,29 @@
 
     // 900px
     @media (min-width: 56.25em) {
-        height: 65vh;
-        width: 65vw;
+        height: 70vh;
+        width: 60vw;
     }
 
     // 1024px laptop 
     @media (min-width: 64em) {
         left: unset;
         right: 10rem;
-        height: 59vh;
-        width: 63vw;
+        height: 66vh;
+        width: 55vw;
 
         .works-overview {
             p { 
-                font-size: 1.25rem;
+                font-size: 1rem;
                 margin: 0 5rem;
                 margin-bottom: 1.5rem;
             }
             .close-button {
                 right: 0.5rem;
+
                 svg {
-                width: 1.75rem;
-                height: 1.75rem;
+                    width: 1.75rem;
+                    height: 1.75rem;
                 }
             }
         }
@@ -139,12 +162,136 @@
 
         .works-folders {
             img{
+                max-width: 60%;
+            }
+            
+            p{
+                font-size: 1rem;
+            }
+        }
+    }
+
+    // 1122px 
+    @media (min-width: 70.12em) {
+        height: 65vh;
+        width: 49vw;
+        right: 17rem;
+
+        .works-overview {
+            p { 
+                margin: 0 4rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+    // 1250px
+    @media (min-width: 78.12em) {
+        height: 60vh;
+    }
+
+    // 1300px
+    @media (min-width: 81.25em) {
+        height: 58vh;
+        width: 45vw;
+        right: 20rem;
+    }
+
+    // 1400px
+    @media (min-width: 87.5em) {
+        height: 51vh;
+        width: 45vw;
+        right: 23rem;
+    }
+
+    // 1550px
+    @media (min-width: 96.87em) {
+        height: 55vh;
+        width: 43vw;
+        right: 27rem;
+        top: 7rem;
+
+        .works-overview {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            p{
+                font-size: 18px;
+            }
+        }
+
+        .works-folders {
+            img{
+                max-width: 65%;
+            }
+            
+            p{
+                font-size: 18px;
+            }
+        }
+    }
+
+    // 1600px
+    @media (min-width: 100em) {
+        height: 52vh;
+    }
+
+    // 1650px
+    @media (min-width: 103.12em) {
+        height: 55vh;
+
+        .works-overview {
+            p{
+                font-size: 20px;
+            }
+        }
+
+        .works-folders {
+            img{
                 max-width: 70%;
             }
             
             p{
-                font-size: 1.25rem;
+                font-size: 20px;
             }
         }
+    }
+
+    // 1650px
+    @media (min-width: 103.12em) {
+        height: 52vh;
+    }
+
+    // 1800px
+    @media (min-width: 112.5em) {
+        height: 53vh;
+
+        .works-overview {
+            h1{
+                font-size: 3rem;
+            }
+
+            p{
+                margin-bottom: 2.5rem;
+                margin-top: 1.5rem;
+                font-size: 22px;
+            }
+        }
+
+        .works-folders {
+            img{
+                max-width: 73%;
+            }
+            
+            p{
+                font-size: 22px;
+            }
+        }
+    }
+
+    // 1920px
+    @media (min-width: 120em) {
+        height: 47vh;
     }
 }

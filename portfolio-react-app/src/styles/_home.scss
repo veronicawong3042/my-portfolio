@@ -59,7 +59,7 @@
     @media (min-width: 28.25em) {
         .intro {
             h1 {
-                padding-top: 5rem;
+                padding-top: 7rem;
                 margin: 0 2rem;
             }
 
@@ -77,6 +77,15 @@
                 max-width: 80%;
             }
     }}
+
+    // 516px
+    @media (min-width: 32.25em) {
+        .intro {
+            h1 {
+                padding-top: 10rem;
+            }
+        }
+    }
 
     // 768px tablet
     @media (min-width: 48em) {
@@ -108,9 +117,8 @@
 
     // 1024px laptop
     @media (min-width: 64em) {
-
         .intro {
-            padding-top: 12rem;
+            padding-top: 4rem;
         }
         .nav-folders {
             display: grid;
@@ -118,6 +126,34 @@
             position: absolute;
             right: 0.5rem;
             top: 0.5rem;
+        }
+    }
+
+    // 1400px laptop
+    @media (min-width: 87.5em) {
+        .intro {
+            padding-top: 9rem;
+
+            h1 {
+                font-size: 5rem;
+            }
+            p{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    // 1600px laptop
+    @media (min-width: 100em) {
+        .intro {
+            padding-top: 13.5rem;
+        }
+    }
+
+    // 1920px laptop
+    @media (min-width: 120em) {
+        .intro {
+            padding-top: 23rem;
         }
     }
 }

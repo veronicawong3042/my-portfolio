@@ -37,7 +37,6 @@
 // 768px tablet
 @media (min-width: 48em) {
     .header-content {
-
         .header-text {
             font-size: 1rem;
         }
@@ -48,5 +47,14 @@
 @media (min-width: 64em) {
     .header-content {
         justify-content: flex-end;
+    }
+}
+
+// 1400px laptop
+@media (min-width: 87.5em) {
+    .header-content {
+        .header-text {
+            font-size: 1.2rem;
+        }
     }
 }
