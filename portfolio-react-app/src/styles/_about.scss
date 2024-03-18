@@ -147,15 +147,18 @@
         p{
             background-color: rgb(218, 218, 255);
             padding: 0.3rem;
-            // border: 1.5px black solid;
             border-radius: 0.5rem;
             margin: 0.2rem;
             font-size: 14px;
         }
     }
 
-    li {
+    .experiences li {
         list-style: none;
+        background-color: white;
+        padding: 0.5rem;
+        margin: 1rem;
+        border-radius: 0.75rem;
     }
 
     // faq section

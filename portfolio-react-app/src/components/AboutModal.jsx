@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Loading from './Loading';
 import { IoClose } from 'react-icons/io5';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { Fade } from "react-awesome-reveal";
+import 'animate.css';
 
 
 const AboutModal = ({ onClose }) => {
@@ -82,9 +84,11 @@ const AboutModal = ({ onClose }) => {
                                         <li key={index}>
                                             <div className="timeline-line"></div>
                                             <svg className='star-icon' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z"/></svg>
-                                            <h3>{experience.title.rendered}</h3>
-                                            <p>{experience.acf.date_range}</p>
-                                            <p>{experience.acf.description}</p>
+                                            <Fade duration={1500} >
+                                                <h3>{experience.title.rendered}</h3>
+                                                <p>{experience.acf.date_range}</p>
+                                                <p>{experience.acf.description}</p>
+                                            </Fade>
                                         </li>
                                         ))}
                                     </ul>
@@ -123,6 +127,8 @@ const AboutModal = ({ onClose }) => {
                 </article>
             )}
         </div>
+                                            
+
     );
 };
 
