@@ -5,7 +5,6 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { Fade } from "react-awesome-reveal";
 import 'animate.css';
 
-
 const AboutModal = ({ onClose }) => {
     const restBase = 'https://veronica-wong.com/portfolio/wp-json/wp/v2/';
     const aboutPath = restBase + 'pages/9?acf_format=standard';
@@ -43,6 +42,8 @@ const AboutModal = ({ onClose }) => {
                 setExperiencesData(experiencesData);
                 setStackData(stackData);
                 console.log('stack data:', stackData);
+                console.log('about_blurb data:', aboutData.acf.about_blurb);
+
 
                 console.log('Experiences data:', experiencesData);
                 console.log('Stack data:', stackData);
@@ -77,7 +78,13 @@ const AboutModal = ({ onClose }) => {
                                 </div>
                                 </div>
                                 <div className={tab === 1 ? "show-tab" : "hide-tab"}>
-                                    <p>{aboutData.acf.about_blurb}</p>
+                                <div>
+                                {aboutData.acf.about_blurb.map((blurb, index) => (
+                                    <div key={index}>
+                                        <p>{blurb.about_blurbs}</p>
+                                    </div>
+                                ))}
+                                </div>
                                     <h2>{aboutData.acf.experiences_heading}</h2>
                                     <ul className='experiences'>
                                     {experiencesData.map((experience, index) => (
@@ -95,7 +102,6 @@ const AboutModal = ({ onClose }) => {
                                 </div>
                                 <div className={tab === 2 ? "show-tab" : "hide-tab"}>
                                 <div>
-                                   
                                     {stackData.map((stack, index) => (
                                         <div key={index}>
                                             <h3>{stack.title.rendered}</h3>
