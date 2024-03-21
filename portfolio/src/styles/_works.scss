@@ -15,6 +15,10 @@
     overflow: auto;
     margin: 0 auto;
 
+    .cls-1, .cls-2 {
+        fill: #c8cbfd;
+    }
+
     .all-works img {
         max-width: 70%;
     }
@@ -49,8 +53,8 @@
         grid-template-columns: 50% 50%;    
     }
 
-    .works-folders img{
-        max-width: 55%;
+    .works-folders svg{
+        width: 55%;
     }
 
     // 330px
@@ -87,7 +91,7 @@
             }
         }
         .works-folders {
-            img{
+            svg{
                 max-width: 75%;
             }
             
@@ -102,7 +106,7 @@
         height: 68vh;
 
         .works-folders {
-            img{
+            svg{
                 max-width: 65%;
             }
         }
@@ -122,6 +126,15 @@
 
         .all-works {
             margin: 0 3rem;
+        }
+
+        .close-button {
+            right: 0.5rem;
+
+            svg {
+                width: 1.75rem;
+                height: 1.75rem;
+            }
         }
     }
 
@@ -144,14 +157,6 @@
                 margin: 0 5rem;
                 margin-bottom: 1.5rem;
             }
-            .close-button {
-                right: 0.5rem;
-
-                svg {
-                    width: 1.75rem;
-                    height: 1.75rem;
-                }
-            }
         }
 
         .all-works {
@@ -161,7 +166,7 @@
         }
 
         .works-folders {
-            img{
+            svg{
                 max-width: 60%;
             }
             
@@ -222,7 +227,7 @@
         }
 
         .works-folders {
-            img{
+            svg{
                 max-width: 65%;
             }
             
@@ -248,7 +253,7 @@
         }
 
         .works-folders {
-            img{
+            svg{
                 max-width: 70%;
             }
             
@@ -280,7 +285,7 @@
         }
 
         .works-folders {
-            img{
+            svg{
                 max-width: 73%;
             }
             

@@ -7,7 +7,8 @@ body {
 
 .splash-content {
     position: absolute;
-    bottom: 5rem;
+    // bottom: 5rem;
+    top: 25rem;
     text-align: center;
     right: 0;
     left: 0;
@@ -15,6 +16,7 @@ body {
 
 .splash-page {
     text-align: center;
+    position: relative;
     h1 {
         font-weight: 400;
         margin: 0 2rem;
@@ -26,8 +28,9 @@ body {
     }
 
     button {
-        background-color: $pink;
-        padding: 0.5rem;
+        background-color: $light-blue;
+        padding: 0.75rem;
+        border-radius: 1rem;
     }
 
 }
@@ -35,7 +38,7 @@ body {
 // 324px
 @media (min-width: 20.25em) {
     .splash-content{
-        bottom: 5rem;
+        top: 25rem;
 
     .splash-page{
         h1{
@@ -59,7 +62,6 @@ body {
     }
 
     .splash-page {
-
         img {
             width: 32rem;
             position: relative;
@@ -94,6 +96,6 @@ body {
     }
 
     .splash-content{
-        bottom: 11rem;
+        top: 26rem;    
     }
 }

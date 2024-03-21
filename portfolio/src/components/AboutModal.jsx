@@ -64,7 +64,7 @@ const AboutModal = ({ onClose }) => {
                 <article id={`post-${aboutData.id}`}>
                     <div className="about-entry-content">
                         <section>
-                            <div>
+                            <div> 
                                 <button className='close-button' onClick={onClose}><IoClose /></button>
                                 <ul className='tab-nav'>
                                     <li className={tab === 1 ? 'background-heading active' : 'background-heading'} onClick={() => updateTab(1)}>{aboutData.acf.background_heading}</li>
@@ -78,13 +78,13 @@ const AboutModal = ({ onClose }) => {
                                 </div>
                                 </div>
                                 <div className={tab === 1 ? "show-tab" : "hide-tab"}>
-                                <div>
-                                {aboutData.acf.about_blurb.map((blurb, index) => (
-                                    <div key={index}>
-                                        <p>{blurb.about_blurbs}</p>
+                                    <div className='about-blurbs'>
+                                        {aboutData.acf.about_blurb.map((blurb, index) => (
+                                            <div key={index}>
+                                                <p>{blurb.about_blurbs}</p>
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
-                                </div>
                                     <h2>{aboutData.acf.experiences_heading}</h2>
                                     <ul className='experiences'>
                                     {experiencesData.map((experience, index) => (
@@ -103,7 +103,7 @@ const AboutModal = ({ onClose }) => {
                                 <div className={tab === 2 ? "show-tab" : "hide-tab"}>
                                 <div>
                                     {stackData.map((stack, index) => (
-                                        <div key={index}>
+                                        <div key={index} className='all-skills'>
                                             <h3>{stack.title.rendered}</h3>
                                             <div className="skills">
                                             {stack.acf.stack.map((single, skillIndex) => (

@@ -41,22 +41,21 @@ const Home = ({ restBase }) => {
                                 <h1>{restData.acf.name}'s desktop</h1>
                                 <p>{restData.acf.introduction}</p>
                             </div>
-                            <a href=""></a>
                             <div className='nav-folders'>
                                 <button className='folder-button' onClick={() => setShowModal1(true)}>
-                                    <img className='folder-images' src={restData.acf.nav_links[0].folder_icon} alt='folder icon' />
+                                    <span className='folder-svg' dangerouslySetInnerHTML={{__html:restData.acf.nav_links[0].folder_icon}}></span>
                                     <p>{restData.acf.nav_links[0].nav_link}</p>
                                 </button>
                                 {showModal1 && <WorksModal onClose={() => setShowModal1(false)} />}
 
                                 <button className='folder-button' onClick={() => setShowModal2(true)}>
-                                    <img src={restData.acf.nav_links[1].folder_icon} alt='folder icon' />
+                                    <span className='folder-svg' dangerouslySetInnerHTML={{__html:restData.acf.nav_links[0].folder_icon}}></span>
                                     <p>{restData.acf.nav_links[1].nav_link}</p>
                                 </button>
                                 {showModal2 && <AboutModal onClose={() => setShowModal2(false)} />}
 
                                 <button className='folder-button' onClick={() => setShowModal3(true)}>
-                                    <img src={restData.acf.nav_links[2].folder_icon} alt='folder icon' />
+                                    <span className='folder-svg' dangerouslySetInnerHTML={{__html:restData.acf.nav_links[0].folder_icon}}></span>
                                     <p>{restData.acf.nav_links[2].nav_link}</p>
                                 </button>
                                 {showModal3 && <ContactModal onClose={() => setShowModal3(false)} />}

@@ -54,7 +54,7 @@ const WorksModal = ({ onClose }) => {
                                 {worksData.map((work) => (
                                 <div key={work.id} id={`work-${work.id}`}>
                                         <button className='works-folders' onClick={() => handleWorkClick(work)}>
-                                            <img src={work._embedded['wp:featuredmedia'][0].source_url} alt="folder icon" />
+                                            <span className='folder-svg' dangerouslySetInnerHTML={{__html:work.acf.folder_icon}}></span>
                                             <p>{work.title.rendered}</p>
                                         </button>
                                     </div>

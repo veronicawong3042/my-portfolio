@@ -6,11 +6,11 @@
     border-radius: 0.5rem;
     border: 2px solid black;
     position: absolute;
-    top: 0; 
+    top: 1rem; 
     left: 0;
     right: 0;
     z-index: 10;
-    height: 90vh;
+    height: 85vh;
     width: 90vw;
     overflow: auto;
     text-align: left;
@@ -108,10 +108,19 @@
     h2 {
         text-align: center;
         margin: 0;
+        font-weight: 600;
     }
 
     p, a, h3 {
         margin: 0.5rem 1.5rem;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 16px;
     }
 
     // background section
@@ -170,5 +179,124 @@
 
     .down-arrow, .up-arrow {
         margin: 1rem;
+    }
+
+    // 600px
+    @media (min-width: 37.5em){
+        width: 80vw;
+        height: 85vw;
+
+        .about-heading h1 {
+            font-size: 1.8rem;
+        }
+
+        .background-heading {
+            padding: 0.1rem 0.75rem;
+            border-top-right-radius: 1.35rem;
+            border-top-left-radius: 1.35rem;
+        }
+
+        .stack-heading {
+            padding: 0.1rem 2.35rem;
+            border-top-right-radius: 1.35rem;
+            border-top-left-radius: 1.35rem;
+        }
+
+        .faq-heading {
+            padding: 0.1rem 2.8rem;
+            border-top-right-radius: 1.35rem;
+            border-top-left-radius: 1.35rem;
+        }
+        
+        .tab-nav {
+            li {
+                font-size: 1rem;
+            }
+        }
+
+        .about-blurbs {
+            margin: 0 2rem;
+        }
+        
+        p {
+            font-size: 1rem;
+        }
+
+        // faq
+        .question-heading {
+            grid-template-columns: 90% 10%;
+        }
+    }
+
+    // 768px tablet
+    @media (min-width: 48em) {
+        height: 75vh;
+        width: 65vw;
+
+        .about-blurbs {
+            font-size: 1rem;
+        }
+
+        .close-button {
+            right: 0.5rem;
+            top: 0.5rem;
+
+            svg {
+                width: 1.75rem;
+                height: 1.75rem;
+            }
+        }
+
+        .experiences {
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        .all-skills {
+            width: 80%;
+            margin: 0 auto;
+
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+        .skills p {
+            font-size: 1rem;
+        }
+        
+        .faq-section {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    // 965px
+    @media (min-width: 60.31em) {
+        width: 55vw;
+        top: 3rem;
+    }
+
+    // 1024px laptop
+    @media (min-width: 64em) {
+        left: unset;
+        right: 13rem;
+        top: 0;
+
+        .close-button {
+            top: 0.25rem;
+        }
+
+        .faq-section {
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        .down-arrow, .up-arrow {
+            width: 20px;
+            height: 20px;
+        }
+
     }
 }
