@@ -19,7 +19,7 @@
         fill: #c8cbfd;
     }
 
-    .all-works img {
+    .works-folders svg {
         max-width: 70%;
     }
 
@@ -58,14 +58,14 @@
     }
 
     // 330px
-    @media (min-width: 20.63em) {
-        height: 87vh;
-        width: 87vw;
+    @media (min-width: 20.62em) {
+        height: 75vh;
+        width: 89vw;
     }
 
     // 382px
-    @media (min-width: 23.88em) {
-        height: 89vh;
+    @media (min-width: 23.87em) {
+        height: 80vh;
     }
 
     // 425px mobile large
@@ -90,10 +90,12 @@
                 margin: 0 auto;
             }
         }
+
+        .works-folders svg {
+            max-width: 75%;
+        }
+
         .works-folders {
-            svg{
-                max-width: 75%;
-            }
             
             p{
                 font-size: 1rem;
@@ -105,10 +107,8 @@
     @media (min-width: 35em) {
         height: 68vh;
 
-        .works-folders {
-            svg{
-                max-width: 65%;
-            }
+        .works-folders svg {
+            max-width: 65%;
         }
     }
 
@@ -116,6 +116,7 @@
     @media (min-width: 48em) {
         height: 69vh;
         width: 67vw;
+        top: 3rem;
 
         .works-overview {
             p { 
@@ -165,11 +166,11 @@
             }
         }
 
+        .works-folders svg{
+            max-width: 60%;
+        }
+
         .works-folders {
-            svg{
-                max-width: 60%;
-            }
-            
             p{
                 font-size: 1rem;
             }
@@ -226,6 +227,10 @@
             }
         }
 
+        .works-folders svg{
+            max-width: 65%;
+        }
+
         .works-folders {
             svg{
                 max-width: 65%;
@@ -252,11 +257,11 @@
             }
         }
 
+        .works-folders svg {
+            max-width: 70%;
+        }
+
         .works-folders {
-            svg{
-                max-width: 70%;
-            }
-            
             p{
                 font-size: 20px;
             }
@@ -284,11 +289,11 @@
             }
         }
 
+        .works-folders svg {
+            max-width: 73%;
+        }
+
         .works-folders {
-            svg{
-                max-width: 73%;
-            }
-            
             p{
                 font-size: 22px;
             }

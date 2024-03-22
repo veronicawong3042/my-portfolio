@@ -82,8 +82,7 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                             <img key={index} src={imageUrl} alt={imageAlt} />
                                         );
                                     })}
-                                    
-                                    <p>{selectedWork.acf.project_summary}</p>
+                                    <p className='work-summary'>{selectedWork.acf.project_summary}</p>
                                     <div className="links">
                                         <a href={selectedWork.acf.live_site_link}>Live Site</a>
                                         <a href={selectedWork.acf.github_link}>Github</a>
@@ -92,15 +91,6 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                         <div className="duration">
                                             <h3>{selectedWork.acf.duration_heading}</h3>
                                             <p>{selectedWork.acf.duration}</p>
-                                        </div>
-
-                                        <div className="toolkit">
-                                            <h3>{selectedWork.acf.toolkit_heading}</h3>
-                                            {selectedWork.acf.toolkit.map((tool, index) => (
-                                                <div key={index}>
-                                                    <p>{tool.tool}</p>
-                                                </div>
-                                            ))}
                                         </div>
                                         <div className="team">
                                             <h3>{selectedWork.acf.team_heading}</h3>
@@ -115,12 +105,19 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                             <h3>{selectedWork.acf.roles_heading}</h3>
                                             <p>{selectedWork.acf.roles}</p>
                                         </div>
-
+                                        <div className="toolkit">
+                                            <h3>{selectedWork.acf.toolkit_heading}</h3>
+                                            {selectedWork.acf.toolkit.map((tool, index) => (
+                                                <div key={index}>
+                                                    <p>{tool.tool}</p>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={tab === 2 ? "show-tab" : "hide-tab"}>
                                     {selectedWork.acf.project_process.map((processItem, index) => (
-                                        <div key={index}>
+                                        <div className='process' key={index}>
                                             {processItem.heading && (
                                                 <h3>{processItem.heading}</h3>
                                             )}
