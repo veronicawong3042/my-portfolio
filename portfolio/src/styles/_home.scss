@@ -30,13 +30,14 @@
         .folder-button {
             max-width: 100%;
             width: 12rem;
+
+            svg{
+                max-width: 50%;
+                height: auto;
+            }
         }
 
 
-        .folder-svg svg{
-            max-width: 50%;
-            height: auto;
-        }
         
         p{
             color: $text-color;
@@ -71,11 +72,12 @@
         .nav-folders {
             .folder-button {
                 width: 8rem;
+
+                svg{
+                    max-width: 80%;
+                }
             }
 
-            .folder-svg svg{
-                max-width: 80%;
-            }
     }}
 
     // 516px
@@ -102,11 +104,12 @@
         .nav-folders {
             .folder-button {
                 width: 11rem;
+                
+                svg{
+                    max-width: 80%;
+                }
             }
 
-            .folder-svg svg{
-                max-width: 80%;
-            }
             
             .folder-button p {
                 font-size: 1.5rem;
@@ -147,13 +150,6 @@
     @media (min-width: 100em) {
         .intro {
             padding-top: 13.5rem;
-        }
-    }
-
-    // 1920px laptop
-    @media (min-width: 120em) {
-        .intro {
-            padding-top: 23rem;
         }
     }
 }

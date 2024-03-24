@@ -7,7 +7,6 @@ body {
 
 .splash-content {
     position: absolute;
-    // bottom: 5rem;
     top: 25rem;
     text-align: center;
     right: 0;
@@ -32,7 +31,6 @@ body {
         padding: 0.75rem;
         border-radius: 1rem;
     }
-
 }
 
 // 324px
@@ -51,23 +49,31 @@ body {
 // 388px 
 @media (min-width: 24.25em) {
     .splash-content{
-        bottom: 10rem;
+        top: 25rem;
+    }
+    .splash-page {
+        img {
+            width: 20rem;
+            position: relative;
+            right: 0;
+            left: 0;
+            top: 4rem;
+        }
     }
 }
 
 // 768px tablet
 @media (min-width: 48em) {
     .splash-content{
-        bottom: 10rem;
+        top: 28rem;
     }
-
     .splash-page {
         img {
             width: 32rem;
             position: relative;
             right: 0;
             left: 0;
-            top: -12rem;
+            top: -7rem;
         }
     }
 }
@@ -91,11 +97,11 @@ body {
         
         img {
             width: 45rem;
-            top: -23rem;
+            top: -19rem;
         }
     }
 
     .splash-content{
-        top: 26rem;    
+        top: 29rem;    
     }
 }

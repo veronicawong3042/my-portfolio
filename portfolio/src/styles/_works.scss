@@ -10,7 +10,7 @@
     left: 0;
     right: 0;
     z-index: 10;
-    height: 85vh;
+    // height: 85vh;
     width: 90vw;
     overflow: auto;
     margin: 0 auto;
@@ -20,7 +20,7 @@
     }
 
     .works-folders svg {
-        max-width: 70%;
+        width: 50%;
     }
 
     h1 {
@@ -51,10 +51,6 @@
     .all-works {
         display: grid;
         grid-template-columns: 50% 50%;    
-    }
-
-    .works-folders svg{
-        width: 55%;
     }
 
     // 330px
@@ -92,11 +88,10 @@
         }
 
         .works-folders svg {
-            max-width: 75%;
+                width: 75%;
         }
 
         .works-folders {
-            
             p{
                 font-size: 1rem;
             }
@@ -215,7 +210,7 @@
         height: 55vh;
         width: 43vw;
         right: 27rem;
-        top: 7rem;
+        top: 5rem;
 
         .works-overview {
             h1 {
@@ -232,10 +227,6 @@
         }
 
         .works-folders {
-            svg{
-                max-width: 65%;
-            }
-            
             p{
                 font-size: 18px;
             }
@@ -245,63 +236,33 @@
     // 1600px
     @media (min-width: 100em) {
         height: 52vh;
+        width: 40vw;
+        right: 29.5rem;
     }
 
     // 1650px
     @media (min-width: 103.12em) {
         height: 55vh;
-
-        .works-overview {
-            p{
-                font-size: 20px;
-            }
-        }
+        width: 38vw;
+        right: 31rem;
 
         .works-folders svg {
-            max-width: 70%;
+            max-width: 55%;
         }
-
-        .works-folders {
-            p{
-                font-size: 20px;
-            }
-        }
-    }
-
-    // 1650px
-    @media (min-width: 103.12em) {
-        height: 52vh;
     }
 
     // 1800px
     @media (min-width: 112.5em) {
         height: 53vh;
-
-        .works-overview {
-            h1{
-                font-size: 3rem;
-            }
-
-            p{
-                margin-bottom: 2.5rem;
-                margin-top: 1.5rem;
-                font-size: 22px;
-            }
-        }
-
-        .works-folders svg {
-            max-width: 73%;
-        }
-
-        .works-folders {
-            p{
-                font-size: 22px;
-            }
-        }
+        width: 37vw;
+        right: 34rem;
     }
 
     // 1920px
     @media (min-width: 120em) {
         height: 47vh;
+        width: 34.5vw;
+        right: 39rem;
+        top: 8rem;
     }
 }
