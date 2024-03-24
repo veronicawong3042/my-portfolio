@@ -10,6 +10,7 @@
     .header-icons {
         display: flex;
         fill: $text-color;
+        align-items: center;
     }
 
     .header-text {
@@ -32,6 +33,16 @@
         margin-right: 0.75rem;
     }
 
+    .paint-palette {
+        display: none;
+    }
+
+    .paint-palette-2 {
+        width: 24px;
+        height: 24px;
+        margin-left: 0.5rem;
+    }
+
 }
 
 // 768px tablet
@@ -47,7 +58,23 @@
 @media (min-width: 64em) {
     .header-content {
         justify-content: flex-end;
+
+        .header-icons {
+            align-items: center;
+        }
+
+        .paint-palette {
+            display: flex;
+            width: 24px;
+            height: 24px;
+        }
+    
+        .paint-palette-2 {
+            display: none;
+        }
     }
+    
+
 }
 
 // 1400px laptop

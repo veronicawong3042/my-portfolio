@@ -246,9 +246,10 @@
 
         .work-details {
             display: grid;
-            grid-template-columns: repeat(4, 20%);
+            grid-template-columns: repeat(4, 21%);
             margin: 0 2rem;
             justify-content: center;
+            gap: 1rem;
 
             h3 {
                 margin-top: 2rem;
@@ -258,6 +259,21 @@
 
     // 1000px
     @media (min-width: 62.5em) {
-        left: 6rem;
+        right: 6rem;
+    }
+
+    // 1024px
+    @media (min-width: 64em) {
+        left: unset;
+        top: 0rem;
+
+        .work-summary {
+            margin: 2.5rem 3rem;
+        }
+    }
+
+    // 1440px 
+    @media (min-width: 90em) {
+        
     }
 }

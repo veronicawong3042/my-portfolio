@@ -184,7 +184,8 @@
     // 600px
     @media (min-width: 37.5em){
         width: 80vw;
-        height: 85vw;
+        height: 85vh;
+        top: 2rem;
 
         .about-heading h1 {
             font-size: 1.8rem;
@@ -231,7 +232,7 @@
     // 768px tablet
     @media (min-width: 48em) {
         height: 75vh;
-        width: 65vw;
+        width: 70vw;
 
         .about-blurbs {
             font-size: 1rem;
@@ -297,6 +298,18 @@
             width: 20px;
             height: 20px;
         }
+    }
 
+    // 1440px
+    @media (min-width: 90em) {
+        right: 20rem;
+        width: 53vw;
+        top: 1.5rem;
+    }
+
+    // 1920px
+    @media (min-width: 120em) {
+        right: 35rem;
+        width: 45vw;
     }
 }
