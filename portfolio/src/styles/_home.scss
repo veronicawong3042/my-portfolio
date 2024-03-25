@@ -1,11 +1,48 @@
 @use 'variables' as *;
 
+
+@keyframes float {
+    from {
+        transform: rotate(0deg) scale(12) translateX(-20px);
+    }
+    to {
+        transform: rotate(360deg) scale(18) translateX(20px);
+    }
+}
+
 .home-entry-content {
     position: relative;
     color: $text-color;
-    background-color: $background-color;
     height: 100vh;
+    overflow: hidden; /* Ensure the orbs stay within the container */
+    background:  #eaeffbc3;
     
+    // Define keyframes for orb animation
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none; /* Ensure pseudo-elements do not interfere with content */
+        z-index: -1; /* Move orbs behind content */
+    }
+
+    &::before {
+        background: radial-gradient(circle, $orb-color 10%, transparent 60%);
+        background-size: 40px 40px; /* Adjust size of orbs */
+        background-position: right bottom; /* Start orbs from the bottom */
+        animation: float 55s infinite alternate; /* Adjust animation duration */
+    }
+
+    &::after {
+        background: radial-gradient(circle, $orb-color-2 10%, transparent 70%);
+        background-size: 30px 30px; /* Adjust size of orbs */
+        background-position: left bottom; /* Start orbs from the bottom */
+        animation: float 45s infinite alternate; /* Adjust animation duration */
+    }
     .intro {
         text-align: center;
 
