@@ -9,9 +9,7 @@ const Home = ({ restBase }) => {
     const restPath = restBase + 'pages/9?acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
-    const [showModal1, setShowModal1] = useState(false)
-    const [showModal2, setShowModal2] = useState(false)
-    const [showModal3, setShowModal3] = useState(false)
+    const [activeModal, setActiveModal] = useState(null)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -19,7 +17,6 @@ const Home = ({ restBase }) => {
             if (response.ok) {
                 const data = await response.json()
                 setData(data)
-                console.log(data);
                 setLoadStatus(true)
             } else {
                 setLoadStatus(false)
@@ -27,6 +24,14 @@ const Home = ({ restBase }) => {
         }
         fetchData()
     }, [restPath])
+
+    const openModal = (modalId) => {
+        setActiveModal(modalId)
+    }
+
+    const closeModal = () => {
+        setActiveModal(null)
+    }
 
     return (
         <>
@@ -42,27 +47,22 @@ const Home = ({ restBase }) => {
                                 <p>{restData.acf.introduction}</p>
                             </div>
                             <div className='nav-folders'>
-                                <button className='folder-button' onClick={() => setShowModal1(true)}>
-                                    <span className='folder-svg' dangerouslySetInnerHTML={{__html:restData.acf.nav_links[0].folder_icon}}></span>
-                                    <p>{restData.acf.nav_links[0].nav_link}</p>
-                                </button>
-                                {showModal1 && <WorksModal onClose={() => setShowModal1(false)} />}
-
-                                <button className='folder-button' onClick={() => setShowModal2(true)}>
-                                    <span className='folder-svg' dangerouslySetInnerHTML={{__html:restData.acf.nav_links[0].folder_icon}}></span>
-                                    <p>{restData.acf.nav_links[1].nav_link}</p>
-                                </button>
-                                {showModal2 && <AboutModal onClose={() => setShowModal2(false)} />}
-
-                                <button className='folder-button' onClick={() => setShowModal3(true)}>
-                                    <span className='folder-svg' dangerouslySetInnerHTML={{__html:restData.acf.nav_links[0].folder_icon}}></span>
-                                    <p>{restData.acf.nav_links[2].nav_link}</p>
-                                </button>
-                                {showModal3 && <ContactModal onClose={() => setShowModal3(false)} />}
+                                {restData.acf.nav_links.map((link, index) => (
+                                    <button key={index} className='folder-button' onClick={() => openModal(index)}>
+                                        <span className='folder-svg' dangerouslySetInnerHTML={{__html: link.folder_icon}}></span>
+                                        <p>{link.nav_link}</p>
+                                    </button>
+                                ))}
                             </div>
-
                         </section>
                     </div>
+                    {activeModal !== null && (
+                        <div className="modal-container">
+                            {activeModal === 0 && <WorksModal onClose={closeModal} />}
+                            {activeModal === 1 && <AboutModal onClose={closeModal} />}
+                            {activeModal === 2 && <ContactModal onClose={closeModal} />}
+                        </div>
+                    )}
                 </article>
                 :
                 <Loading />

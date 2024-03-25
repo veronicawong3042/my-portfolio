@@ -6,17 +6,19 @@
     border-radius: 0.5rem;
     border: 2px solid black;
     position: absolute;
-    top: 1rem; 
+    top: 5rem; 
+    height: 33rem;
     left: 0;
     right: 0;
     z-index: 10;
-    // height: 85vh;
     width: 90vw;
     overflow: auto;
     margin: 0 auto;
 
-    .cls-1, .cls-2 {
-        fill: #c8cbfd;
+    .works-folders {
+        .cls-1, .cls-2 {
+            fill: #c8cbfd;
+        }
     }
 
     .works-folders svg {
@@ -55,19 +57,13 @@
 
     // 330px
     @media (min-width: 20.62em) {
-        height: 75vh;
         width: 89vw;
-    }
-
-    // 382px
-    @media (min-width: 23.87em) {
-        height: 80vh;
     }
 
     // 425px mobile large
     @media (min-width: 26.56em) {
-        height: 72vh;
         width: 75vw;
+        height: 30rem;
 
         .works-overview {
             p { 
@@ -88,7 +84,7 @@
         }
 
         .works-folders svg {
-                width: 75%;
+            width: 75%;
         }
 
         .works-folders {
@@ -100,7 +96,7 @@
 
     // 560px
     @media (min-width: 35em) {
-        height: 68vh;
+        height: 28rem;
 
         .works-folders svg {
             max-width: 65%;
@@ -109,9 +105,8 @@
 
     // 768px tablet
     @media (min-width: 48em) {
-        height: 69vh;
         width: 67vw;
-        top: 3rem;
+        height: 26rem;
 
         .works-overview {
             p { 
@@ -136,16 +131,15 @@
 
     // 900px
     @media (min-width: 56.25em) {
-        height: 70vh;
         width: 60vw;
     }
 
     // 1024px laptop 
     @media (min-width: 64em) {
         left: unset;
-        right: 10rem;
-        height: 66vh;
+        right: 15rem;
         width: 55vw;
+        top: 10rem;
 
         .works-overview {
             p { 
@@ -174,9 +168,8 @@
 
     // 1122px 
     @media (min-width: 70.12em) {
-        height: 65vh;
         width: 49vw;
-        right: 17rem;
+        right: 17rem; 
 
         .works-overview {
             p { 
@@ -186,31 +179,22 @@
         }
     }
 
-    // 1250px
-    @media (min-width: 78.12em) {
-        height: 60vh;
-    }
-
     // 1300px
     @media (min-width: 81.25em) {
-        height: 58vh;
         width: 45vw;
         right: 20rem;
     }
 
     // 1400px
     @media (min-width: 87.5em) {
-        height: 51vh;
         width: 45vw;
         right: 23rem;
     }
 
     // 1550px
     @media (min-width: 96.87em) {
-        height: 55vh;
         width: 43vw;
         right: 27rem;
-        top: 5rem;
 
         .works-overview {
             h1 {
@@ -235,14 +219,12 @@
 
     // 1600px
     @media (min-width: 100em) {
-        height: 52vh;
         width: 40vw;
         right: 29.5rem;
     }
 
     // 1650px
     @media (min-width: 103.12em) {
-        height: 55vh;
         width: 38vw;
         right: 31rem;
 
@@ -253,16 +235,13 @@
 
     // 1800px
     @media (min-width: 112.5em) {
-        height: 53vh;
         width: 37vw;
         right: 34rem;
     }
 
     // 1920px
     @media (min-width: 120em) {
-        height: 47vh;
         width: 34.5vw;
         right: 39rem;
-        top: 8rem;
     }
 }
