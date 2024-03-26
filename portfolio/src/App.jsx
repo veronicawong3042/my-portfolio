@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import SplashPage from './pages/Splash'; 
+import { ThemeProvider } from './context/ThemeContext';
+import ThemeToggle from './components/ThemeToggle';
 
 function App() {
     const [showSplash, setShowSplash] = useState(true);
@@ -12,6 +14,7 @@ function App() {
     };
 
     return (
+        <ThemeProvider>
         <Router basename="/">
             <header id="masthead" className="site-header">
                 <div className="site-branding"></div>
@@ -32,6 +35,7 @@ function App() {
                 </footer>
             )}
         </Router>
+        </ThemeProvider>
     );
 }
 
