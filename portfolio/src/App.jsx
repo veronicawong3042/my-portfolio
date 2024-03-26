@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import SplashPage from './pages/Splash'; 
 import { ThemeProvider } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
+import Palette from './components/Palette';
+import Header from './components/Header';
 
 function App() {
     const [showSplash, setShowSplash] = useState(true);
@@ -13,12 +15,12 @@ function App() {
         setShowSplash(false);
     };
 
+    console.log('App')
     return (
         <ThemeProvider>
         <Router basename="/">
-            <header id="masthead" className="site-header">
-                <div className="site-branding"></div>
-            </header>
+            {/* <Palette/> */}
+            <Header/>
             <main id="main">
                 {showSplash ? (
                     <SplashPage onStart={handleStart} />

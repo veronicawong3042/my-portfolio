@@ -4,6 +4,7 @@ import AboutModal from '../components/AboutModal'
 import WorksModal from '../components/WorksModal'
 import ContactModal from '../components/ContactModal'
 import Header from '../components/Header'
+import Palette from '../components/Palette'
 
 const Home = ({ restBase }) => {
     const restPath = restBase + 'pages/9?acf_format=standard'
@@ -38,7 +39,8 @@ const Home = ({ restBase }) => {
             {isLoaded ?
                 <article id={`post-${restData.id}`}>
                     <div>
-                        <Header/>
+                        {/* <Header/> */}
+                        {/* <Palette/> */}
                     </div>
                     <div className="home-entry-content">
                         <section>
