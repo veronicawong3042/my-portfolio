@@ -4,6 +4,7 @@ import { IoClose } from 'react-icons/io5';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { Fade } from "react-awesome-reveal";
 import 'animate.css';
+import FilterStack from './FilterStack';
 
 const AboutModal = ({ onClose }) => {
     const restBase = 'https://veronica-wong.com/portfolio/wp-json/wp/v2/';
@@ -61,7 +62,6 @@ const AboutModal = ({ onClose }) => {
             {isLoading ? (
                 <Loading />
             ) : (
-                <article id={`post-${aboutData.id}`}>
                     <div className="about-entry-content">
                         <section>
                             <div> 
@@ -101,20 +101,7 @@ const AboutModal = ({ onClose }) => {
                                     </ul>
                                 </div>
                                 <div className={tab === 2 ? "show-tab" : "hide-tab"}>
-                                <div>
-                                    {stackData.map((stack, index) => (
-                                        <div key={index} className='all-skills'>
-                                            <h3>{stack.title.rendered}</h3>
-                                            <div className="skills">
-                                            {stack.acf.stack.map((single, skillIndex) => (
-                                                <div key={skillIndex}>
-                                                    <p>{single}</p>
-                                                </div>
-                                            ))}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
+                                    <FilterStack/>
                                 </div>
                                 <div className={tab === 3 ? "show-tab" : "hide-tab"}>
                                     {aboutData.acf.faq.map((faqItem, index) => (
@@ -130,7 +117,6 @@ const AboutModal = ({ onClose }) => {
                             </div>
                         </section>
                     </div>
-                </article>
             )}
         </div>
                                             

@@ -2,15 +2,26 @@
 
 // Typography
 
-
 // colors
 $text-color: #383C7A;
 $background-color: #EAEFFB;
 $light-purple: #c8cbfd;
 $light-blue: #ACC3F2;
 $pink: #fbd1d1;
+
 $orb-color: rgba(87, 93, 183, 0.784);
 $orb-color-2: #f99cb3d8;
+
+// dark blue
+$db-text-color: #DDD7F4;
+$db-background-color: #07143F;
+$db-primary: #202F5F;
+$db-secondary: #6b7ed8; /* or #DDD7F4 */
+$db-tertiary: #597bc5;
+$db-accent: #EFEFF3;
+
+$db-orb-color: #a770b980;
+$db-orb-color-2: #6b7dd87a;
 
 // Break Points
 $mobile: 20.625em; // 330px

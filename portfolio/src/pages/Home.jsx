@@ -1,16 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Loading from '../components/Loading'
 import AboutModal from '../components/AboutModal'
 import WorksModal from '../components/WorksModal'
 import ContactModal from '../components/ContactModal'
 import Header from '../components/Header'
-import Palette from '../components/Palette'
+import { ThemeContext } from '../context/ThemeContext';
 
 const Home = ({ restBase }) => {
     const restPath = restBase + 'pages/9?acf_format=standard'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
     const [activeModal, setActiveModal] = useState(null)
+    const { theme } = useContext(ThemeContext)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -37,10 +38,9 @@ const Home = ({ restBase }) => {
     return (
         <>
             {isLoaded ?
-                <article id={`post-${restData.id}`}>
+                <article id={`post-${restData.id}`} className={`${theme}`}>
                     <div>
-                        {/* <Header/> */}
-                        {/* <Palette/> */}
+                        <Header/>
                     </div>
                     <div className="home-entry-content">
                         <section>
@@ -65,6 +65,10 @@ const Home = ({ restBase }) => {
                             {activeModal === 2 && <ContactModal onClose={closeModal} />}
                         </div>
                     )}
+                    <footer>
+                        <p className="copyright">&copy; 2024 Veronica Wong</p>
+                        <p>powered by &#127836;, &#127834;, and &#9749;</p>
+                    </footer>
                 </article>
                 :
                 <Loading />

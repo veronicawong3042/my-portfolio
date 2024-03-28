@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+.filter-container {
+    margin-top: 1rem;
+
+
+.filter-buttons {
+    position: relative;
+    z-index: 100;
+    margin-left: 0.75rem;
+
+    button {
+        background-color: $light-purple;
+        margin-left: 0.5rem;
+        padding: 0.5rem;
+    }
+}
+
+.line {
+    border-bottom: 2px $text-color solid;
+    width: 95%;
+    height: 1px;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.filter-item {
+    list-style: none;
+}
+.filter-content {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+
+    p {
+        background-color: $light-blue;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        margin: 0.5rem 0.25rem;
+    }
+}
+
+}

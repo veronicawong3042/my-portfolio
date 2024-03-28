@@ -1,6 +1,9 @@
 // import
 @use 'variables';
 
+// color themes
+@use './themes/darkBlue';
+
 // header
 @use 'header';
 
@@ -8,6 +11,7 @@
 @use 'splash';
 @use 'home';
 @use 'about';
+@use 'filterStack';
 @use 'works';
 @use 'singleWork';
 @use 'contact';

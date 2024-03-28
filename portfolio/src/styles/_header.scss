@@ -7,13 +7,30 @@
     justify-content: space-between;
     align-items: center;
     
-    .dark-mode-dot {
+    .dark-blue-dot {
         position: absolute;
         top: 3.5rem;
         z-index: 10;
         left: 4.5rem;
         fill: $text-color;
         width: 1.5rem;
+
+        circle {
+            stroke: black;
+        }
+    }
+
+    .light-blue-dot {
+        position: absolute;
+        top: 3.5rem;
+        z-index: 10;
+        left: 2.75rem;
+        fill: $background-color;
+        width: 1.5rem;
+
+        circle {
+            stroke: black;
+        }
     }
 
     .header-icons {
