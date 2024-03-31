@@ -62,22 +62,10 @@ body {
     }
 
     img {
-        width: 20rem;
+        width: 8rem;
         height: auto;
-    
-    }
-}
-
-// 324px
-@media (min-width: 20.25em) {
-    .splash-content{
-        top: 25rem;
-
-    .splash-page{
-        h1{
-            margin: 0 2rem;
-        }
-    }
+        position: relative;
+        top: 14rem;
     }
 }
 
@@ -86,13 +74,13 @@ body {
     .splash-content{
         top: 25rem;
     }
+
     .splash-page {
-        img {
-            width: 20rem;
-            position: relative;
+       img {
+            width: 9rem;
             right: 0;
             left: 0;
-            top: 4rem;
+            top: 15rem;
         }
     }
 }
@@ -100,15 +88,15 @@ body {
 // 768px tablet
 @media (min-width: 48em) {
     .splash-content{
-        top: 28rem;
+        top: 26rem;
     }
     .splash-page {
         img {
-            width: 32rem;
+            width: 10rem;
             position: relative;
             right: 0;
             left: 0;
-            top: -7rem;
+            top: 15rem;
         }
     }
 }
@@ -149,12 +137,12 @@ body {
         }
         
         img {
-            width: 45rem;
-            top: -19rem;
+            width:11rem;
+            top: 13rem;
         }
     }
 
     .splash-content{
-        top: 29rem;    
+        top: 25rem;    
     }
 }

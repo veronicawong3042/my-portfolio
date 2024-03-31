@@ -105,6 +105,17 @@
         }
     }
 
+    .profile-picture {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 17rem;
+            height: auto;
+            margin: 0 auto;
+        }
+    }
+
     h2 {
         text-align: center;
         margin: 0;
@@ -246,6 +257,10 @@
                 height: 1.75rem;
                 fill: $text-color;
             }
+        }
+
+        .profile-picture img {
+            width: 20rem;
         }
 
         .experiences {

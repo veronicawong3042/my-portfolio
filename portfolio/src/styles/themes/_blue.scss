@@ -1,0 +1,271 @@
+@use '../variables' as *;
+
+@use '../variables' as *;
+
+@use '../variables' as *;
+
+@keyframes float {
+    from {
+        transform: rotate(0deg) scale(12) translateX(-20px);
+    }
+    to {
+        transform: rotate(360deg) scale(18) translateX(20px);
+    }
+}
+
+.blue {
+
+    .home-entry-content {
+        background-color: $b-background-color;
+        color: $b-text-color;
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 1;
+
+        // Define keyframes for orb animation
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none; /* Ensure pseudo-elements do not interfere with content */
+            z-index: -1; /* Move orbs behind content */
+        }
+
+        &::before {
+            background: radial-gradient(circle, $b-orb-color 10%, transparent 60%);
+            background-size: 40px 40px; /* Adjust size of orbs */
+            background-position: right bottom; /* Start orbs from the bottom */
+            animation: float 90s infinite alternate; /* Adjust animation duration */
+        }
+
+        &::after {
+            background: radial-gradient(circle, $b-orb-color-2 10%, transparent 50%);
+            background-size: 30px 30px; /* Adjust size of orbs */
+            background-position: left bottom; /* Start orbs from the bottom */
+            animation: float 120s infinite alternate; /* Adjust animation duration */
+        }
+
+        .intro p, 
+        .nav-folders p {
+            color: $b-text-color;
+        }
+
+        .nav-folders .cls-1, 
+        .nav-folders .cls-2 {
+            fill: $b-primary;
+            stroke: $b-accent;
+
+        }
+        .cls-3 {
+            fill: $b-background-color;
+        }
+    }
+
+    .header-content {
+        background-color: $b-primary;
+        color: $b-background-color;
+
+        .search-wifi-icons {
+            fill: $b-background-color;
+        }
+    
+        .paint-palette, .paint-palette-2 {
+            fill: $b-background-color;
+        }
+    }
+
+    .works-entry-content {
+        background-color: $b-background-color;
+        border: 2px solid $b-text-color;
+        color: $b-text-color;
+
+        .works-overview .close-button svg {
+            fill: $b-text-color;
+        }
+
+        h1 {
+            background-color: $b-secondary;
+        }
+
+        .works-folders p {
+            color: $b-text-color;
+        }
+        
+        .works-folders .cls-1, 
+        .works-folders .cls-2 {
+            fill: $b-secondary;
+            stroke: $b-text-color;
+        }
+
+        .works-folders .cls-3 {
+            fill: $b-background-color;
+        }
+
+    }
+
+    .work-entry-content,
+    .about-entry-content,
+    .contact-entry-content {
+        background-color: $b-background-color;
+        border: 2px solid $b-text-color;
+        color: $b-text-color;
+
+        .close-button svg {
+            fill: $b-text-color;
+        }
+
+        .work-container {
+            background-color: $b-background-color;
+            border-top: 1.5px solid $b-text-color;
+            border-bottom: 1.5px solid $b-text-color;
+        }
+
+        .work-heading {
+            border: 1.5px solid $b-text-color;
+        }
+
+        .search-icon {
+            fill: $b-text-color;
+        }
+
+        .contact-tab {
+            color: $b-text-color;
+            background-color: $b-accent;
+        }
+
+        .overview-heading, 
+        .process-heading, 
+        .faq-heading, 
+        .stack-heading, 
+        .background-heading, 
+        .contact-tab {
+            border-right: 1.5px $b-text-color solid;
+            border-left: 1.5px $b-text-color solid;
+            border-top: 1.5px $b-text-color solid;
+        }
+
+        .links a {
+            color: $b-text-color;
+            background-color: $b-accent;
+        }
+
+        .tab-nav {
+            li.active, li:hover, li:active, li:focus {
+                color: $b-text-color;
+                background-color: $b-accent;
+            }
+        } 
+
+        .about-heading-container, 
+        .contact-heading-container {
+            background-color: $b-background-color;
+            border-top: 1.5px solid $b-text-color;
+            border-bottom: 1.5px solid $b-text-color;
+        }
+
+        .about-heading, 
+        .contact-heading {
+            border: 1.5px solid $b-text-color;
+        }
+
+        .experiences li {
+            background-color: $b-accent;
+        }
+
+        .timeline-line {
+            background-color: $b-text-color;
+        }
+
+        .star-icon {
+            background-color: $b-accent;
+            fill: $b-text-color;
+        }
+
+        .skills p {
+            background-color: $b-primary;
+        }
+
+        .copy-button {
+            button {
+                background-color: $b-primary;
+                svg {
+                    fill: $b-background-color;
+                }
+            }
+
+            .email {
+                background-color: $b-background-color;
+                color: $b-text-color;
+            }
+        }
+
+        .copy-button:hover, .copy-button:active, .copy-button:focus {
+            button {
+                background-color: $b-accent;
+                svg {
+                    fill: $b-primary;
+                }
+            }
+        }
+    }
+
+    .filter-container {
+        .filter-buttons button {
+            background-color: $b-primary;
+            color: $b-background-color;
+        }
+        
+        .line {
+            border-bottom: 2px $b-text-color solid;
+        }
+        
+        .filter-content p {
+            background-color: $b-secondary;
+            color: $b-text-color;
+        }
+
+        .filter-buttons {
+            button:active, button:focus, button:hover, button.active {
+                border: 2px $b-secondary solid;
+                background-color: $b-text-color;
+                color: $b-background-color;
+            }
+        }
+    }
+
+    .work-entry-content {
+        .links {
+            a:hover, a:focus, a:active {
+                background-color: $b-primary;
+                color: $b-background-color;
+            }
+        }
+    }
+
+    .contact-entry-content .links a {
+        background-color: $b-background-color;
+        color: $b-text-color;
+
+        svg {
+            fill: $b-text-color;
+        }
+    }
+
+    .contact-entry-content .links {
+        a:hover, a:focus, a:active{
+            svg {
+                fill: $b-accent;
+            }
+        }
+    }
+
+    footer {
+        background-color: $b-primary;
+        color: $b-background-color;
+    }
+}

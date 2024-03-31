@@ -5,6 +5,7 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { Fade } from "react-awesome-reveal";
 import 'animate.css';
 import FilterStack from './FilterStack';
+import pfp from '../images/pfp.png';
 
 const AboutModal = ({ onClose }) => {
     const restBase = 'https://veronica-wong.com/portfolio/wp-json/wp/v2/';
@@ -43,7 +44,7 @@ const AboutModal = ({ onClose }) => {
                 setExperiencesData(experiencesData);
                 setStackData(stackData);
                 console.log('stack data:', stackData);
-                console.log('about_blurb data:', aboutData.acf.about_blurb);
+                console.log('about data:', aboutData);
 
 
                 console.log('Experiences data:', experiencesData);
@@ -78,6 +79,9 @@ const AboutModal = ({ onClose }) => {
                                 </div>
                                 </div>
                                 <div className={tab === 1 ? "show-tab" : "hide-tab"}>
+                                    <div className="profile-picture">
+                                        <img src={pfp} alt="my profile picture" />
+                                    </div>
                                     <div className='about-blurbs'>
                                         {aboutData.acf.about_blurb.map((blurb, index) => (
                                             <div key={index}>

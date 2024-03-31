@@ -1,3 +1,4 @@
+import Loading from '../components/Loading';
 import mySpriteImage from '../images/my-sprite.png';
 import { BsArrowRightCircleFill } from "react-icons/bs";
 
@@ -5,7 +6,7 @@ const SplashPage = ({ onStart }) => {
 
     return (
         <div className="splash-page">
-            <img src={mySpriteImage} alt="me" />
+            <img src={mySpriteImage} className='me' alt="me" />
             <div className='splash-content'>
                 <h1>Portfolio</h1>
                 <p className='username'>veronicawong</p>  
