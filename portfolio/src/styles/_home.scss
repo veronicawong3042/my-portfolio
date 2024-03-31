@@ -33,14 +33,14 @@
         background: radial-gradient(circle, $orb-color 5%, transparent 70%);
         background-size: 40px 40px; /* Adjust size of orbs */
         background-position: right bottom; /* Start orbs from the bottom */
-        animation: float 55s infinite alternate; /* Adjust animation duration */
+        animation: float 60s infinite alternate; /* Adjust animation duration */
     }
 
     &::after {
         background: radial-gradient(circle, $orb-color-2 5%, transparent 80%);
         background-size: 30px 30px; /* Adjust size of orbs */
         background-position: left bottom; /* Start orbs from the bottom */
-        animation: float 45s infinite alternate; /* Adjust animation duration */
+        animation: float 50s infinite alternate; /* Adjust animation duration */
     }
 
     .intro {

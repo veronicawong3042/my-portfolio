@@ -6,48 +6,31 @@
     background-color: $light-blue;
     justify-content: space-between;
     align-items: center;
-    
-    .dark-blue-dot {
-        position: absolute;
-        top: 3.5rem;
-        z-index: 10;
-        left: 4.5rem;
-        fill: $text-color;
-        width: 1.5rem;
 
-        circle {
-            stroke: black;
-        }
-    }
-
-    .light-blue-dot {
-        position: absolute;
-        top: 3.5rem;
-        z-index: 10;
-        left: 2.75rem;
-        fill: $background-color;
-        width: 1.5rem;
-
-        circle {
-            stroke: black;
-        }
-    }
-
-    .header-icons {
+    .search-wifi-icons {
         display: flex;
-        fill: $text-color;
         align-items: center;
+        fill: $text-color;
+    }
+
+    .paint-palette, .paint-palette-2 {
+        fill: $text-color;
+        height: 0.75rem;
     }
 
     .header-text {
         display: flex;
-        margin: 0 0.75rem;
+        margin: 0.2rem;
         font-size: 0.85rem;
+    }
+
+    .time {
+        margin-right: 0.5rem;
     }
 
     .search-icon{
         width: 1.5rem;
-        margin-left: 0.5rem;
+        margin: 0.5rem;
     }
 
     .wifi-icon {
@@ -95,7 +78,7 @@
 // 1024px laptop
 @media (min-width: 64em) {
     .header-content {
-        justify-content: flex-end;
+        justify-content: space-between;
 
         .header-icons {
             align-items: center;
@@ -105,6 +88,7 @@
             display: flex;
             width: 24px;
             height: 24px;
+            margin-left: 0.5rem;
         }
     
         .paint-palette-2 {

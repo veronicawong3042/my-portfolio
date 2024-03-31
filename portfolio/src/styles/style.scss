@@ -3,11 +3,14 @@
 
 // color themes
 @use './themes/darkBlue';
+@use './themes/green';
 
 // header
 @use 'header';
+@use 'themeToggle';
 
 // main
+@use 'loading';
 @use 'splash';
 @use 'home';
 @use 'about';

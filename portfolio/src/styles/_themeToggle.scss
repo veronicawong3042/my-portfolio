@@ -1,0 +1,60 @@
+@use 'variables' as *;
+
+.header-content {
+    .dark-blue-dot {
+        position: absolute;
+        top: 5.5rem;
+        z-index: 100;
+        left: 0.5rem;
+        fill: $db-background-color;
+        width: 1.5rem;
+
+        circle {
+            stroke: #253d8e92;
+            stroke-width: 0.15rem;
+        }
+    }
+
+    .light-blue-dot {
+        position: absolute;
+        top: 3.75rem;
+        z-index: 100;
+        left: 0.5rem;
+        fill: $light-blue;
+        width: 1.5rem;
+
+        circle {
+            stroke: #708dc894;
+            stroke-width: 0.15rem;
+        }
+    }
+
+    .green-dot {
+        position: absolute;
+        top: 7.25rem;
+        z-index: 100;
+        left: 0.5rem;
+        fill: $g-primary;
+        width: 1.5rem;
+
+        circle {
+            stroke: #68753f97;
+            stroke-width: 0.15rem;
+        }
+    }
+
+    // 768px
+    @media (min-width:48em) {
+        .light-blue-dot {
+            top: 4.75rem;
+        }
+
+        .dark-blue-dot {
+            top: 6.5rem;
+        }
+
+        .green-dot {
+            top: 8.25rem;
+        }
+    }
+}

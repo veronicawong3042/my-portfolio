@@ -4,7 +4,7 @@
     background-color: $background-color;
     color: $text-color;
     border-radius: 0.5rem;
-    border: 2px solid black;
+    border: 2px solid $text-color;
     position: absolute;
     top: 5rem; 
     height: 33rem;
@@ -18,6 +18,9 @@
     .works-folders {
         .cls-1, .cls-2 {
             fill: #c8cbfd;
+        }
+        p {
+            color: $text-color;
         }
     }
 
@@ -47,6 +50,10 @@
             right: 0.3rem;
             top: 0.5rem;
             padding: 0;
+
+            svg {
+                fill: $text-color;
+            }
         }
     }
 

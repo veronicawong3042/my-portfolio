@@ -3,44 +3,86 @@
 .filter-container {
     margin-top: 1rem;
 
+    .filter-buttons {
+        position: relative;
+        z-index: 100;
+        margin-left: 0.75rem;
 
-.filter-buttons {
-    position: relative;
-    z-index: 100;
-    margin-left: 0.75rem;
+        button {
+            background-color: $light-purple;
+            padding: 0.5rem;
+            margin: 0.25rem;
+            margin-left: 0.5rem;
+            color: $text-color;
+        }
 
-    button {
-        background-color: $light-purple;
-        margin-left: 0.5rem;
-        padding: 0.5rem;
+        button:active, button:focus, button:hover, button.active {
+            border: 2px $light-purple solid;
+            background-color: $text-color;
+            color: $background-color;
+        }
     }
-}
 
-.line {
-    border-bottom: 2px $text-color solid;
-    width: 95%;
-    height: 1px;
-    margin: 0 auto;
-    margin-top: 1rem;
-}
-
-.filter-item {
-    list-style: none;
-}
-.filter-content {
-    margin-top: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    border-radius: 1rem;
-
-    p {
-        background-color: $light-blue;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        margin: 0.5rem 0.25rem;
+    .line {
+        border-bottom: 2px $text-color solid;
+        width: 90%;
+        height: 1px;
+        margin: 0 auto;
+        margin-top: 0.85rem;
     }
-}
 
+    .filter-item {
+        list-style: none;
+    }
+    .filter-content {
+        margin-top: 7.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        border-radius: 1rem;
+
+        p {
+            background-color: $light-blue;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            margin: 0.5rem 0.25rem;
+        }
+    }
+
+    // 406px
+    @media (min-width: 25.37em) {
+        .filter-content {
+            margin-top: 4.5rem;
+        }
+
+        .filter-buttons {
+            margin-left: 1.25rem;
+
+            button {
+                margin-left: 0;
+            }
+        }
+    }
+
+    // 768px
+    @media (min-width: 48em) {
+        .filter-buttons {
+            button {
+                margin-left: 0.25rem;
+            }
+        }
+    }
+
+    // 1024px
+    @media (min-width:64em) {
+        .filter-buttons {
+            margin-left: 1.75rem;
+        }
+
+        .filter-content {
+            margin-left: 1.75rem;
+            margin-right: 1.75rem;
+        }
+    }
 }

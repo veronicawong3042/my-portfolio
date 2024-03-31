@@ -9,11 +9,11 @@
     }
 }
 
-.dark-blue {
+.green {
 
     .home-entry-content {
-        background-color: $db-background-color;
-        color: $db-text-color;
+        background-color: $g-background-color;
+        color: $g-text-color;
         position: relative;
         height: 100vh;
         overflow: hidden;
@@ -33,112 +33,110 @@
         }
 
         &::before {
-            background: radial-gradient(circle, $db-orb-color 10%, transparent 60%);
+            background: radial-gradient(circle, $g-orb-color 5%, transparent 50%);
             background-size: 40px 40px; /* Adjust size of orbs */
             background-position: right bottom; /* Start orbs from the bottom */
-            animation: float 90s infinite alternate; /* Adjust animation duration */
+            animation: float 60s infinite alternate; /* Adjust animation duration */
         }
 
         &::after {
-            background: radial-gradient(circle, $db-orb-color-2 10%, transparent 50%);
+            background: radial-gradient(circle, $g-orb-color-2 5%, transparent 60%);
             background-size: 30px 30px; /* Adjust size of orbs */
             background-position: left bottom; /* Start orbs from the bottom */
-            animation: float 120s infinite alternate; /* Adjust animation duration */
+            animation: float 50s infinite alternate; /* Adjust animation duration */
         }
 
         .intro p, 
         .nav-folders p {
-            color: $db-text-color;
+            color: $g-text-color;
         }
 
         .nav-folders .cls-1, 
         .nav-folders .cls-2 {
-            fill: $db-secondary;
-            stroke: $db-text-color;
+            fill: $g-secondary;
+            stroke: $g-text-color;
 
         }
         .cls-3 {
-            fill: $db-text-color;
+            fill: $g-accent;
         }
     }
 
     .header-content {
-        background-color: $db-primary;
-        color: $db-text-color;
+        background-color: $g-primary;
+        color: $g-text-color;
 
         .search-wifi-icons {
-            fill: $db-text-color;
+            fill: $g-text-color;
         }
     
         .paint-palette, .paint-palette-2 {
-            fill: $db-text-color;
+            fill: $g-text-color;
         }
     }
 
     .works-entry-content {
-        background-color: $db-background-color;
-        border: 2px solid $db-text-color;
-        color: $db-text-color;
+        background-color: $g-background-color;
+        border: 2px solid $g-text-color;
+        color: $g-text-color;
 
         .works-overview .close-button svg {
-            fill: $db-text-color;
+            fill: $g-text-color;
         }
 
         h1 {
-            background-color: $db-primary;
+            background-color: $g-primary;
         }
 
         .works-folders p {
-            color: $db-text-color;
+            color: $g-text-color;
         }
         
         .works-folders .cls-1, 
         .works-folders .cls-2 {
-            fill: $db-tertiary;
-            stroke: $db-text-color;
+            fill: $g-primary;
+            stroke: $g-text-color;
         }
 
         .works-folders .cls-3 {
-            fill: $db-text-color;
+            fill: $g-accent;
         }
-
     }
 
     .work-entry-content,
     .about-entry-content,
     .contact-entry-content {
-        background-color: $db-background-color;
-        border: 2px solid $db-text-color;
-        color: $db-text-color;
+        background-color: $g-background-color;
+        border: 2px solid $g-text-color;
+        color: $g-text-color;
 
         .close-button svg {
-            fill: $db-text-color;
+            fill: $g-text-color;
         }
-
         .work-container {
-            background-color: $db-background-color;
-            border-top: 1.5px solid $db-text-color;
-            border-bottom: 1.5px solid $db-text-color;
+            background-color: $g-background-color;
+            border-top: 1.5px solid $g-text-color;
+            border-bottom: 1.5px solid $g-text-color;
         }
 
         .work-heading {
-            border: 1.5px solid $db-text-color;
+            border: 1.5px solid $g-text-color;
         }
 
         .search-icon {
-            fill: $db-text-color;
+            fill: $g-text-color;
         }
 
         .tab-nav {
             li.active, li:hover, li:active, li:focus {
-                color: $db-text-color;
-                background-color: $db-secondary;
+            color: $g-text-color;
+            background-color: $g-secondary;
             }
-        } 
+        }
 
         .contact-tab {
-            color: $db-text-color;
-            background-color: $db-secondary;
+            color: $g-text-color;
+            background-color: $g-secondary;
         }
 
         .overview-heading, 
@@ -147,63 +145,72 @@
         .stack-heading, 
         .background-heading, 
         .contact-tab {
-            border-right: 1.5px $db-text-color solid;
-            border-left: 1.5px $db-text-color solid;
-            border-top: 1.5px $db-text-color solid;
+            border-right: 1.5px $g-text-color solid;
+            border-left: 1.5px $g-text-color solid;
+            border-top: 1.5px $g-text-color solid;
         }
 
-        .links a {
-            color: $db-background-color;
+        .show-tab .links a {
+            background-color: $g-secondary;
+            color: $g-text-color;
+            
+        }
+
+        .show-tab .links {
+            a:hover, a:focus, a:active {
+                color: $g-background-color;
+            background-color: $g-primary;
+            }
         }
 
         .about-heading-container, 
         .contact-heading-container {
-            background-color: $db-background-color;
-            border-top: 1.5px solid $db-text-color;
-            border-bottom: 1.5px solid $db-text-color;
+            background-color: $g-background-color;
+            border-top: 1.5px solid $g-text-color;
+            border-bottom: 1.5px solid $g-text-color;
         }
 
         .about-heading, 
         .contact-heading {
-            border: 1.5px solid $db-text-color;
+            border: 1.5px solid $g-text-color;
         }
 
         .experiences li {
-            background-color: $db-primary;
+            background-color: $g-secondary;
         }
 
         .timeline-line {
-            background-color: $db-accent;
+            background-color: $g-primary;
         }
 
         .star-icon {
-            background-color: $db-secondary;
-            fill: $db-accent;
+            background-color: $g-secondary;
+            fill: $g-accent;
         }
 
         .skills p {
-            background-color: $db-primary;
+            background-color: $g-primary;
         }
 
         .copy-button {
             button {
-                background-color: $db-primary;
+                background-color: $g-primary;
                 svg {
-                    fill: $db-text-color;
+                    fill: $g-text-color;
                 }
             }
 
             .email {
-                background-color: $db-text-color;
-                color: $db-background-color;
+                background-color: $g-secondary;
+                color: $g-text-color;
             }
         }
 
         .copy-button:hover, .copy-button:active, .copy-button:focus {
             button {
-                background-color: $db-secondary;
+                background-color: $g-text-color;
                 svg {
-                    fill: $db-background-color;
+                    fill: $g-background-color;
                 }
             }
         }
@@ -211,54 +218,46 @@
 
     .filter-container {
         .filter-buttons button {
-            background-color: $db-tertiary;
+            background-color: $g-primary;
         }
         
         .line {
-            border-bottom: 2px $db-text-color solid;
+            border-bottom: 2px $g-text-color solid;
         }
         
         .filter-content p {
-            background-color: $db-secondary;
-            color: $db-background-color;
+            background-color: $g-secondary;
+            color: $g-text-color;
         }
 
         .filter-buttons {
             button:active, button:focus, button:hover, button.active {
-                border: 2px $db-secondary solid;
-                background-color: $db-primary;
-                color: $db-accent;
-            }
-        }
-    }
-
-    .work-entry-content {
-        .links {
-            a:hover, a:focus, a:active {
-                background-color: $db-secondary;
-                color: $db-accent;
+                border: 2px $g-primary solid;
+                background-color: $g-text-color;
+                color: $g-accent;
             }
         }
     }
 
     .contact-entry-content .links a {
-        color: $db-text-color;
+        color: $g-text-color;
+        background-color: none;
 
         svg {
-            fill: $db-text-color;
+            fill: $g-text-color;
         }
     }
 
     .contact-entry-content .links {
         a:hover, a:focus, a:active{
             svg {
-                fill: $db-secondary;
+                fill: $g-primary;
             }
         }
     }
 
     footer {
-        background-color: $db-primary;
-        color: $db-text-color;
+        background-color: $g-primary;
+        color: $g-text-color;
     }
 }
