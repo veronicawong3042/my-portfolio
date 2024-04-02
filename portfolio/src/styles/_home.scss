@@ -70,6 +70,8 @@
         .folder-button {
             max-width: 100%;
             width: 12rem;
+            transition: top ease 0.5s;
+            position: relative;
 
             svg{
                 max-width: 50%;
@@ -80,11 +82,16 @@
         p{
             color: $text-color;
         }
-
         
         button:active, button:focus { 
             border: none;
             outline: none;
+        }
+    }
+
+    .nav-folders {
+        .folder-button:hover, .folder-button:active, .folder-button:focus {
+            top: -5px;
         }
     }
     

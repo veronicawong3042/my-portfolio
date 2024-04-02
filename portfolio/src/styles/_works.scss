@@ -16,12 +16,19 @@
     margin: 0 auto;
 
     .works-folders {
+        position: relative;
+        transition: top ease 0.5s;
+
         .cls-1, .cls-2 {
             fill: #c8cbfd;
         }
         p {
             color: $text-color;
         }
+    }
+
+    .works-folders:hover, .folder-button:active, .folder-button:focus {
+        top: -4px;
     }
 
     .works-folders svg {
