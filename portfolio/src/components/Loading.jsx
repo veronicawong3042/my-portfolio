@@ -5,13 +5,13 @@ const Loading = () => {
     return (
         <div className="loading-container">
             <img src={loading} alt="Loading" className="loading" id="loading" />
-            <div class ="container">
-            <div class="loader">
-                <div class="circle" id="a"></div>
-                <div class="circle" id="b"></div>
-                <div class="circle" id="c"></div>
+            <div className="container">
+                <div className="loader">
+                    <div className="circle" id="a"></div>
+                    <div className="circle" id="b"></div>
+                    <div className="circle" id="c"></div>
+                </div>
             </div>
-    </div>
         </div>
     )
 

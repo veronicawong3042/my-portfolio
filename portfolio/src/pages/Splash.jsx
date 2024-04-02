@@ -1,9 +1,7 @@
-import Loading from '../components/Loading';
 import mySpriteImage from '../images/my-sprite.png';
 import { BsArrowRightCircleFill } from "react-icons/bs";
 
 const SplashPage = ({ onStart }) => {
-
     return (
         <div className="splash-page">
             <img src={mySpriteImage} className='me' alt="me" />
@@ -12,14 +10,14 @@ const SplashPage = ({ onStart }) => {
                 <p className='username'>veronicawong</p>  
                 <div className="password">
                     <div className='dots'>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+                        <span className="dot"></span>
+                        <span className="dot"></span>
+                        <span className="dot"></span>
+                        <span className="dot"></span>
+                        <span className="dot"></span>
+                        <span className="dot"></span>
+                        <span className="dot"></span>
+                        <span className="dot"></span>
                     </div>
                     <BsArrowRightCircleFill className='arrow-button' onClick={onStart} />
                 </div>

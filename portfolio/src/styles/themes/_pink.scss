@@ -152,6 +152,11 @@
             background-color: $p-accent;
         }
 
+        .process a {
+            color: $p-text-color;
+            border-bottom: 2px $p-text-color solid;
+        }
+
         .tab-nav {
             li.active, li:hover, li:active, li:focus {
                 color: $p-text-color;

@@ -7,7 +7,7 @@
     border: 2px solid $text-color;
     position: absolute;
     top: 5rem; 
-    height: 33rem;
+    height: 60vh;
     left: 0;
     right: 0;
     z-index: 10;
@@ -121,6 +121,7 @@
     @media (min-width: 48em) {
         width: 67vw;
         height: 26rem;
+        top: 10rem;
 
         .works-overview {
             p { 
@@ -202,13 +203,14 @@
     // 1400px
     @media (min-width: 87.5em) {
         width: 45vw;
-        right: 23rem;
+        right: 25rem;
     }
 
     // 1550px
     @media (min-width: 96.87em) {
-        width: 43vw;
-        right: 27rem;
+        width: 41vw;
+        right: 28.5rem;
+        height: 28rem;
 
         .works-overview {
             h1 {
@@ -221,7 +223,7 @@
         }
 
         .works-folders svg{
-            max-width: 65%;
+            max-width: 55%;
         }
 
         .works-folders {
@@ -241,6 +243,7 @@
     @media (min-width: 103.12em) {
         width: 38vw;
         right: 31rem;
+        top: 13rem;
 
         .works-folders svg {
             max-width: 55%;
@@ -249,13 +252,14 @@
 
     // 1800px
     @media (min-width: 112.5em) {
-        width: 37vw;
-        right: 34rem;
+        width: 33vw;
+        right: 37rem;
     }
 
     // 1920px
     @media (min-width: 120em) {
         width: 34.5vw;
         right: 39rem;
+        top: 15rem;
     }
 }

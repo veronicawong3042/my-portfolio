@@ -153,7 +153,11 @@
         .show-tab .links a {
             background-color: $g-secondary;
             color: $g-text-color;
-            
+        }
+
+        .process a {
+            color: $g-text-color;
+            border-bottom: 2px $g-text-color solid;
         }
 
         .show-tab .links {

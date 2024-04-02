@@ -131,7 +131,7 @@
 
         .tab-nav {
             li.active, li:hover, li:active, li:focus {
-                color: $db-text-color;
+                color: $db-background-color;
                 background-color: $db-secondary;
             }
         } 
@@ -154,6 +154,11 @@
 
         .links a {
             color: $db-background-color;
+        }
+
+        .process a {
+            color: $db-text-color;
+            border-bottom: 2px $db-text-color solid;
         }
 
         .about-heading-container, 

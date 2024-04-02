@@ -128,7 +128,9 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                                 <img src={processItem.project_images} alt="project images" />
                                             )}
                                             {processItem.link_to_prototype && (
-                                                <a href={processItem.link_to_prototype}>Link to prototype</a>
+                                                <p>View the design 
+                                                    <a href={processItem.link_to_prototype}>here</a>
+                                                </p>
                                             )}
                                         </div>
                                     ))}

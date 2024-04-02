@@ -10,7 +10,7 @@
     left: 0;
     right: 0;
     z-index: 10;
-    height: 35rem;
+    height: 85vh;
     width: 90vw;
     overflow: auto;
     text-align: left;
@@ -298,6 +298,7 @@
         left: unset;
         right: 15rem;
         top: 7.5rem;
+        height: 80vh;
 
         .close-button {
             top: 0.25rem;
@@ -326,5 +327,6 @@
     @media (min-width: 120em) {
         right: 35rem;
         width: 45vw;
+        top: 7.5rem;
     }
 }

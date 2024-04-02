@@ -152,7 +152,6 @@
         .show-tab .links a {
             background-color: $y-secondary;
             color: $y-text-color;
-            
         }
 
         .show-tab .links {
@@ -160,6 +159,11 @@
                 color: $y-background-color;
                 background-color: $y-accent;
             }
+        }
+
+        .process a {
+            color: $y-text-color;
+            border-bottom: 2px $y-text-color solid;
         }
 
         .about-heading-container, 

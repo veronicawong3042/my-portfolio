@@ -70,8 +70,8 @@ const Home = ({ restBase }) => {
                         <p>powered by &#127836;, &#127834;, and &#9749;</p>
                     </footer>
                 </article>
-                :
-                <Loading />
+            :
+            <Loading />
             }
         </>
     )
