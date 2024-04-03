@@ -85,13 +85,13 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                     <p className='work-summary'>{selectedWork.acf.project_summary}</p>
                                     <div className="links">
                                         {selectedWork.acf.live_site_link && (
-                                            <a href={selectedWork.acf.live_site_link}>Live Site</a>
+                                            <a href={selectedWork.acf.live_site_link} target="_blank">Live Site</a>
                                         )}
                                         {selectedWork.acf.devpost_link && (
-                                            <a href={selectedWork.acf.devpost_link}>DevPost</a>
+                                            <a href={selectedWork.acf.devpost_link} target="_blank">DevPost</a>
                                         )}
                                         {selectedWork.acf.github_link && (
-                                        <a href={selectedWork.acf.github_link}>Github</a>
+                                        <a href={selectedWork.acf.github_link} target="_blank">Github</a>
                                         )}
                                     </div>
                                     <div className="work-details">
@@ -136,7 +136,7 @@ const SingleWorkModal = ({ onClose, selectedWork }) => {
                                             )}
                                             {processItem.link_to_prototype && (
                                                 <p>View the design 
-                                                    <a href={processItem.link_to_prototype}>here</a>
+                                                    <a href={processItem.link_to_prototype} target="_blank">here</a>
                                                 </p>
                                             )}
                                         </div>
