@@ -50,6 +50,19 @@
         }
     }
 
+    // 389px
+    @media (min-width: 24.31em) {
+        .filter-buttons {
+            button {
+                margin-left: 0;
+            }
+        }
+
+        .filter-content {
+            margin-top: 4.5rem;
+        }
+    }
+
     // 406px
     @media (min-width: 25.37em) {
         .filter-content {
