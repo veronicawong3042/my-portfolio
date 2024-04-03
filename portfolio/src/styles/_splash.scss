@@ -1,11 +1,8 @@
 @use 'variables' as *;
 
-body {
+.splash-content {
     background-color: white;
     color: black;
-}
-
-.splash-content {
     position: absolute;
     top: 23rem;
     text-align: center;

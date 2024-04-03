@@ -11,6 +11,10 @@
 
 .green {
 
+    .loading-container div {
+        background-color: $g-primary;
+    }
+
     .home-entry-content {
         background-color: $g-background-color;
         color: $g-text-color;
