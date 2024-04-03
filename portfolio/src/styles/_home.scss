@@ -69,7 +69,7 @@
 
         .folder-button {
             max-width: 100%;
-            width: 12rem;
+            width: 13rem;
             transition: top ease 0.5s;
             position: relative;
 
@@ -99,6 +99,13 @@
     @media (min-width: 24em) {
         .nav-folders {
             margin-top: 2rem;
+        }
+    }
+
+    // 416px
+    @media (min-width:26em) {
+        .nav-folders .folder-button {
+            width: 14rem;
         }
     }
     
